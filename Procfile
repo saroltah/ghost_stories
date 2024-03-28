@@ -1,0 +1,1 @@
+gunicorn ghost_stories.wsgi
