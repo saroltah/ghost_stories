@@ -1,1 +1,1 @@
-gunicorn ghost_stories.wsgi
+ web: gunicorn ghost_stories.wsgi
