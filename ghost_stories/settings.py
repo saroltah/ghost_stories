@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'ghost_stories.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv("DATABASE"))
+    'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
 
 
