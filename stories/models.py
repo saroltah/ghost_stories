@@ -4,7 +4,7 @@ from profiles.models import Writer
 
 # Create your models here.
 
-class Xyz(models.Model):
+class Story(models.Model):
   author = models.OneToOneField(Writer, on_delete=models.CASCADE)
   title	= models.CharField(max_length=100)	
   teaser = models.TextField(max_length=500)
