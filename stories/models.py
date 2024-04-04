@@ -12,3 +12,13 @@ class Story(models.Model):
   image	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
   created_on	= models.DateTimeField(auto_now_add=True)
   edited = models.DateTimeField	(auto_now=True)
+
+  class Meta:
+    ordering = ["-created_on"]
+
+  def __str__(self):
+    return f"{self.title} written by {self.author}. {self.teaser}"
+
+
+
+  
