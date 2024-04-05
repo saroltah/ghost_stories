@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'home',
     'stories',
     'profiles',
-    'comments',
 ]
 
 SITE_ID = 1
