@@ -7,17 +7,24 @@ from profiles.models import Writer
 class Story(models.Model):
   author = models.OneToOneField(Writer, on_delete=models.CASCADE)
   title	= models.CharField(max_length=100)	
+  slug = models.SlugField (unique=True, null=True)
   teaser = models.TextField(max_length=500)
   story	= models.TextField()
   image	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
   created_on	= models.DateTimeField(auto_now_add=True)
   edited = models.DateTimeField	(auto_now=True)
+  
 
   class Meta:
     ordering = ["-created_on"]
 
   def __str__(self):
     return f"{self.title} written by {self.author}. {self.teaser}"
+
+  
+  def get_absolute_url(self):
+    return reverse("story_detail", kwargs={"slug": self.slug})
+
 
 class Comment(models.Model):
   author = models.OneToOneField(Writer, on_delete=models.CASCADE)

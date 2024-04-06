@@ -6,6 +6,7 @@ from django.utils import timezone
 class Writer(models.Model):
   name	= models.CharField(max_length=50)
   username = models.CharField(max_length=50)
+  slug = models.SlugField (unique=True, null=True)
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)
@@ -15,9 +16,13 @@ class Writer(models.Model):
   def __str__(self):
     return f"Writer: {self.username} : {self.name}"
 
+  def get_absolute_url(self):
+    return reverse("writer_detail", kwargs={"slug": self.slug})
+
 class Editor(models.Model):
   name = models.CharField(max_length=50)
   username = models.CharField(max_length=50)
+  slug = models.SlugField (unique=True, null=True)
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
@@ -27,3 +32,6 @@ class Editor(models.Model):
 
   def __str__(self):
     return f"Editor: {self.name}"
+
+  def get_absolute_url(self):
+    return reverse("editor_detail", kwargs={"slug": self.slug})
