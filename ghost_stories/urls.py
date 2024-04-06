@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from home import views as index_views
 
+
 urlpatterns = [
     path('', index_views.index, name='index'),
     path('admin/', admin.site.urls),
     path('user/', include('allauth.urls')),
+    path('stories/', include('stories.urls'), name='stories-urls')
 ]
