@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
+{%extends "base.html"%}
 
-<body>
-  <p>TEST!</p>
-</body>
-
-</html>
+{%block content%}
+<h1>Read all Stories</h1>
+{%for story in story_list%}
+<h2>{{story.title}} by {{story.author}}</h2>
+<p>{{story.teaser}}</p>
+<button>Click here, to read more</button>
+{%endfor%}
+{%endblock%}
