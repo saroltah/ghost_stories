@@ -1,6 +1,11 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'index' as homepage %}
+{% url 'stories' as stories %}
+{% url 'writer_detail' as profile %}
+{% url 'terms' as terms %}
+{% url 'about' as about %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,51 +13,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Here goes bootstrap link -->
-  <!-- Here goes font awesome link -->
-  <!-- Here goes CSS link -->
-  <!-- Here goes google font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Julee&family=Karla:ital,wght@0,200..800;1,200..800&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/bb001f50c7.js" crossorigin="anonymous"></script>
   <title>Ghost stories, short stories</title>
 </head>
 
 <body>
   <!-- Menu -->
   <header>
-    This is the placeholder of menu.
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">GhostStories</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse left-side" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse right-side" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'stories' %}">Stories</a>
+            </li>
+            <li class="nav-item me-auto">
+              <a class="nav-link" href="# ">Profile</a>
+            </li>
+            <li class="nav-item me-auto">
+              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item  me-auto">
+              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li class="nav-item me-auto ">
+              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-  {% if user.is_authenticated %}
-  <li class="nav-item">
-    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-      href="{% url 'account_logout' %}">Logout</a>
-  </li>
-  {% else %}
-  <li class="nav-item">
-    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-      href="{% url 'account_signup' %}">Register</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-      href="{% url 'account_login' %}">Login</a>
-  </li>
-  {% endif %}
   <!-- block content-->
   <section>
-    This is the placeholder of section, that is changing:
     {% block content %}
     {% endblock content %}
-    {% if user.is_authenticated %}
-    <p class="text-end m-3">You are logged in as {{ user }}</p>
-    {% else %}
-    <p class="text-end m-3">You are not logged in</p>
-    {% endif %}
-
   </section>
   <!-- Footer -->
   <footer>
-    This is a placeholder of footer.
+    <div class="container">
+      <div>Contact: <br> support@ghoststories.com
+      </div>
+      <div class="copy">
+        Copyright: <br><a href="https://saroltah.github.io/portfolio-2024/">Sarolta Hegyi</a> </div>
+    </div>
   </footer>
   <!-- Script -->
-  <script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
 </body>
 
