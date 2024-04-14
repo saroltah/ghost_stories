@@ -153,6 +153,22 @@ footer {
   margin: 0 auto;
 }
 
+/*about*/
+#about {
+  margin: 30px auto;
+  width: 80%
+}
+
+#about h1 {
+  text-align: center;
+  margin: 30px
+}
+
+#about p {
+  text-align: justify;
+  margin: 40px
+}
+
 /*media*/
 
 @media (min-width: 769px) {
