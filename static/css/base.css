@@ -153,20 +153,25 @@ footer {
   margin: 0 auto;
 }
 
-/*about*/
-#about {
+/*about and terms*/
+.about-and-terms {
   margin: 30px auto;
   width: 80%
 }
 
-#about h1 {
+.about-and-terms h1 {
   text-align: center;
   margin: 30px
 }
 
-#about p {
+.about-and-terms p {
   text-align: justify;
   margin: 40px
+}
+
+.about-and-terms li {
+  margin: 20px;
+  text-align: justify
 }
 
 /*media*/
