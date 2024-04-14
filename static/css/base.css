@@ -117,8 +117,9 @@ footer {
   text-decoration: none;
 }
 
-/*stories*/
-#story-list {
+/*stories, one_story*/
+#story-list,
+#one_story {
   margin: 50px 20px;
 }
 
@@ -127,7 +128,8 @@ footer {
   text-align: justify
 }
 
-#story-list h1 {
+#story-list h1,
+#one_story h1 {
   text-align: center;
   margin: 30px
 }
@@ -137,7 +139,8 @@ footer {
   text-align: center
 }
 
-#story-list .author {
+#story-list .author,
+#one_story .author {
   font-style: italic;
   margin-bottom: 30px;
   text-align: center
@@ -151,6 +154,15 @@ footer {
   border-radius: 30%;
   display: block;
   margin: 0 auto;
+}
+
+#one_story p {
+  margin: 30px;
+  text-align: justify;
+}
+
+#one_story .date {
+  text-align: right;
 }
 
 /*about and terms*/

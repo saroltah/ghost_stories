@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from profiles.models import Writer
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,7 +24,7 @@ class Story(models.Model):
 
   
   def get_absolute_url(self):
-    return reverse("story_detail", kwargs={"slug": self.slug})
+    return reverse("one_story", kwargs={"slug": self.slug})
 
 
 class Comment(models.Model):

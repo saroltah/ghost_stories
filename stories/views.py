@@ -6,3 +6,8 @@ from .models import Story
 class StoryList(generic.ListView):
     queryset = Story.objects.all()
     template_name = "story_list.html"
+
+class OneStory(generic.DetailView):
+    model = Story
+    template_name = "one_story.html"
+    
