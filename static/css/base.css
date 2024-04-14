@@ -3,7 +3,7 @@ body {
   color: white;
   min-width: 100vw;
   margin: 0;
-  padding: 0 0 150px 0;
+  padding: 0px 0px 150px 0px;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
@@ -92,6 +92,30 @@ footer {
   margin: 30px
 }
 
+/*authentication*/
+#signin,
+#signup,
+#signout {
+  text-align: center;
+  padding-top: 30px
+}
+
+#signin button,
+#signup button,
+#signout button {
+  color: white;
+  background-color: black;
+  border: 2px solid red;
+  border-radius: 20%;
+  padding: 20px
+}
+
+#signin a,
+#signup a,
+#signout a {
+  color: red;
+  text-decoration: none;
+}
 
 /*media*/
 
