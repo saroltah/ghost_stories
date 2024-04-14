@@ -14,7 +14,7 @@ class Writer(models.Model):
   resume = models.FileField(blank=True)
 
   def __str__(self):
-    return f"Writer: {self.username} : {self.name}"
+    return f"{self.username}"
 
   def get_absolute_url(self):
     return reverse("writer_detail", kwargs={"slug": self.slug})

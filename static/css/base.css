@@ -117,6 +117,42 @@ footer {
   text-decoration: none;
 }
 
+/*stories*/
+#story-list {
+  margin: 50px 20px;
+}
+
+.one-story {
+  margin: 30px 0px;
+  text-align: justify
+}
+
+#story-list h1 {
+  text-align: center;
+  margin: 30px
+}
+
+#story-list h3 {
+  color: red;
+  text-align: center
+}
+
+#story-list .author {
+  font-style: italic;
+  margin-bottom: 30px;
+  text-align: center
+}
+
+#story-list button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 20px;
+  border-radius: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
 /*media*/
 
 @media (min-width: 769px) {
