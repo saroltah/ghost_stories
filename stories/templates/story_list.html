@@ -1,8 +1,12 @@
 {%extends "base.html"%}
 {% url 'one_story' as one_story %}
+{% url 'add_story' as add_story %}
 
 {%block content%}
 <section id="story-list">
+  <div class="new-story">
+    <a href="{% url 'add_story' %}">Add new story!</a>
+  </div>
   <h1>Read all Stories</h1>
   {%for story in story_list%}
   <div class="one-story">

@@ -11,3 +11,7 @@ class OneStory(generic.DetailView):
     model = Story
     template_name = "one_story.html"
     
+class AddStory(generic.CreateView):
+    model = Story
+    template_name = "add_story.html"
+    fields = '__all__'

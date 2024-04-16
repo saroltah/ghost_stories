@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{% url 'writer_details' as writer_details %}
+
+{%block content%}
+<section id="add_story">
+  <h1>Write your story</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Post</button>
+  </form>
+
+  {%endblock%}
