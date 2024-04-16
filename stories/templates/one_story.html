@@ -1,9 +1,12 @@
 {%extends "base.html"%}
+{% url 'writer_details' as writer_details %}
 
 {%block content%}
 <section id="one_story">
   <h1>{{story.title}}</h1>
-  <p class="author"> by {{story.author}}</p>
+  <p class="author">
+    by
+    {{writer.name}} </a></p>
   <div class="date"><small>{{story.created_on}}</small>
     <small>edited:{{story.edited}}</small></div>
   <p>{{story.story}}</p>

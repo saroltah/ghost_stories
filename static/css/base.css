@@ -186,6 +186,26 @@ footer {
   text-align: justify
 }
 
+/*writer*/
+#writer {
+  margin: 40px
+}
+
+#writer h1 {
+  color: red;
+  text-align: center;
+}
+
+#writer .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#writer p {
+  text-align: justify;
+  margin: 40px
+}
+
 /*media*/
 
 @media (min-width: 769px) {

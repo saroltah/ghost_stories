@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 # Create your models here.
 
@@ -17,7 +18,7 @@ class Writer(models.Model):
     return f"{self.username}"
 
   def get_absolute_url(self):
-    return reverse("writer_detail", kwargs={"slug": self.slug})
+    return reverse("writer_details", kwargs={"writer_slug": self.slug})
 
 class Editor(models.Model):
   name = models.CharField(max_length=50)

@@ -5,4 +5,5 @@ from .models import Writer
 
 class Writer_details(generic.DetailView):
     model = Writer
+    template_name = "writer_detail.html"
     

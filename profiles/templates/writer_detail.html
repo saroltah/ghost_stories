@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{%block content%}
+<section id="writer">
+  <h1>{{writer.username}}</h1>
+  <div class="grid-container">
+    <div> <img src="{{writer.photo}}" alt="Image"></div>
+    <div>
+      <p>name: {{writer.name}}</p>
+      <p>email: {{writer.email}}</p>
+    </div>
+  </div>
+  <p>about me: {{writer.about_me}}</p>
+</section>
+{%endblock%}
