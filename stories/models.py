@@ -6,11 +6,12 @@ from django.urls import reverse
 # Create your models here.
 
 class Story(models.Model):
-  author = models.OneToOneField(Writer, on_delete=models.CASCADE)
+  author = models.CharField(max_length=100)	
   title	= models.CharField(max_length=100)	
-  slug = models.SlugField (unique=True, null=True)
-  story_text = models.TextField()
+  slug = models.SlugField (unique=True)
+  story_text = models.TextField(default='')
   teaser = models.TextField(max_length=500)
+  keywords	= models.CharField(max_length=100, default='')	
   image	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
   created_on	= models.DateTimeField(auto_now_add=True)
   edited = models.DateTimeField	(auto_now=True)
