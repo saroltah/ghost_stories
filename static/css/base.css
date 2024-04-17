@@ -156,6 +156,27 @@ footer {
   margin: 0 auto;
 }
 
+.new-story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+.new-story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
+.new-story a {
+  text-decoration: none;
+  color: white
+}
+
 #one_story p {
   margin: 30px;
   text-align: justify;
@@ -206,6 +227,49 @@ footer {
   margin: 40px
 }
 
+/*add story*/
+#add_story {
+  margin: 40px
+}
+
+#add_story h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#add_story form {
+  width: 70%;
+  margin: 0px auto
+}
+
+#add_story textarea,
+#add_story input {
+  width: 100%
+}
+
+#add_story label {
+  color: red;
+  margin: 20px 0px;
+  font-size: 30px;
+}
+
+#add_story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+#add_story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
 /*media*/
 
 @media (min-width: 769px) {
@@ -215,5 +279,11 @@ footer {
 
   .right-side {
     justify-content: right;
+  }
+}
+
+@media (max-width: 769px) {
+  #add_story form {
+    width: 95%;
   }
 }

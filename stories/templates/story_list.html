@@ -5,7 +5,7 @@
 {%block content%}
 <section id="story-list">
   <div class="new-story">
-    <a href="{% url 'add_story' %}">Add new story!</a>
+    <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
   </div>
   <h1>Read all Stories</h1>
   {%for story in story_list%}
