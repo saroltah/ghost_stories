@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="delete_story">
+  <h1>Delete Story</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    Are you sure you want to delete {{story.title}}?
+    <button>Yes, delete it!</button>
+  </form>
+</div>
+{%endblock%}
