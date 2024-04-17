@@ -1,9 +1,12 @@
 from . import views
 from django.urls import path
-from .views import AddStory
+from .views import StoryList, AddStory, OneStory, EditStory
 
 urlpatterns = [
     path('', views.StoryList.as_view(), name='stories'),
     path('add_story/', views.AddStory.as_view(), name='add_story'),
     path('<slug:slug>/', views.OneStory.as_view(), name='one_story'),
+    path('<slug:slug>/edit_story/', views.EditStory.as_view(), name='edit_story'),
+    path('<slug:slug>/delete_story', views.DeleteStory.as_view(), name='delete_story'),
+
 ]
