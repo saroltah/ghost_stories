@@ -186,6 +186,14 @@ footer {
   text-align: right;
 }
 
+.edit {
+  text-align: center;
+}
+
+.edit a {
+  color: red
+}
+
 /*about and terms*/
 .about-and-terms {
   margin: 30px auto;
@@ -228,33 +236,33 @@ footer {
 }
 
 /*add story*/
-#add_story {
+.add_story {
   margin: 40px
 }
 
-#add_story h1 {
+.add_story h1 {
   font-size: 40px;
   text-align: center;
   margin-bottom: 40px;
 }
 
-#add_story form {
+.add_story form {
   width: 70%;
   margin: 0px auto
 }
 
-#add_story textarea,
-#add_story input {
+.add_story textarea,
+.add_story input {
   width: 100%
 }
 
-#add_story label {
+.add_story label {
   color: red;
   margin: 20px 0px;
   font-size: 30px;
 }
 
-#add_story button {
+.add_story button {
   background-color: black;
   color: white;
   border: 1px solid red;
@@ -265,7 +273,7 @@ footer {
   font-size: 30px
 }
 
-#add_story button:hover {
+.add_story button:hover {
   background-color: red;
   border: 1px solid white;
 }

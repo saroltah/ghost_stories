@@ -1,0 +1,294 @@
+body {
+  background-color: black;
+  color: white;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0px 0px 150px 0px;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Navigation */
+.navbar {
+  padding: 0px 30px;
+  border: 2px solid red;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.bg-body-tertiary {
+  background-color: black !important;
+}
+
+.navbar li {
+  padding: 20px 30px;
+}
+
+.navbar-brand,
+.navbar-toggler,
+.nav-link {
+  color: white;
+}
+
+.navbar-brand:hover,
+.navbar-toggler:hover,
+.nav-link:hover {
+  color: red;
+}
+
+
+.navbar-toggler-icon {
+  color: white;
+  border: 2px solid red;
+}
+
+/*footer*/
+
+footer {
+  padding: 30px;
+  border: 2px solid red;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.copy {
+  text-align: right;
+}
+
+/*Homepgae*/
+
+#homepage {
+  text-align: center;
+  margin-top: 60px;
+  min-height: 100%;
+  position: relative;
+  margin-bottom: 60px
+}
+
+#homepage h3 {
+  margin: 30px 0px 50px 0px
+}
+
+#homepage a {
+  text-decoration: none;
+  color: red;
+  padding: 20px;
+  border: 1px solid red;
+  margin: 30px
+}
+
+/*authentication*/
+#signin,
+#signup,
+#signout {
+  text-align: center;
+  padding-top: 30px
+}
+
+#signin button,
+#signup button,
+#signout button {
+  color: white;
+  background-color: black;
+  border: 2px solid red;
+  border-radius: 20%;
+  padding: 20px
+}
+
+#signin a,
+#signup a,
+#signout a {
+  color: red;
+  text-decoration: none;
+}
+
+/*stories, one_story*/
+#story-list,
+#one_story {
+  margin: 50px 20px;
+}
+
+.one-story {
+  margin: 30px 0px;
+  text-align: justify
+}
+
+#story-list h1,
+#one_story h1 {
+  text-align: center;
+  margin: 30px
+}
+
+#story-list h3 {
+  color: red;
+  text-align: center
+}
+
+#story-list .author,
+#one_story .author {
+  font-style: italic;
+  margin-bottom: 30px;
+  text-align: center
+}
+
+#story-list button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 20px;
+  border-radius: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.new-story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+.new-story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
+.new-story a {
+  text-decoration: none;
+  color: white
+}
+
+#one_story p {
+  margin: 30px;
+  text-align: justify;
+}
+
+#one_story .date {
+  text-align: right;
+}
+
+.edit {
+  text-align: center;
+  margin-bottom: 20px
+}
+
+/*about and terms*/
+.about-and-terms {
+  margin: 30px auto;
+  width: 80%
+}
+
+.about-and-terms h1 {
+  text-align: center;
+  margin: 30px
+}
+
+.about-and-terms p {
+  text-align: justify;
+  margin: 40px
+}
+
+.about-and-terms li {
+  margin: 20px;
+  text-align: justify
+}
+
+/*writer*/
+#writer {
+  margin: 40px
+}
+
+#writer h1 {
+  color: red;
+  text-align: center;
+}
+
+#writer .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#writer p {
+  text-align: justify;
+  margin: 40px
+}
+
+/*add story*/
+#add_story {
+  margin: 40px
+}
+
+#add_story h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#add_story form {
+  width: 70%;
+  margin: 0px auto
+}
+
+#add_story textarea,
+#add_story input {
+  width: 100%
+}
+
+#add_story label {
+  color: red;
+  margin: 20px 0px;
+  font-size: 30px;
+}
+
+#add_story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+#add_story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
+/*media*/
+
+@media (min-width: 769px) {
+  .left-side {
+    justify-content: left;
+  }
+
+  .right-side {
+    justify-content: right;
+  }
+}
+
+@media (max-width: 769px) {
+  #add_story form {
+    width: 95%;
+  }
+}

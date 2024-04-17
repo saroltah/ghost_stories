@@ -2,7 +2,7 @@
 {% url 'writer_details' as writer_details %}
 
 {%block content%}
-<section id="add_story">
+<section class="add_story">
   <h1>Write your story</h1>
 
   <form method="POST">
@@ -10,5 +10,5 @@
     {{form.as_p}}
     <button>Post</button>
   </form>
-
-  {%endblock%}
+</section>
+{%endblock%}
