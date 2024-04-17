@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{% url 'writer_details' as writer_details %}
+
+{%block content%}
+<div class="add_story">
+  <h1>Edit {{story.title}}</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Update</button>
+  </form>
+</div>
+{%endblock%}
