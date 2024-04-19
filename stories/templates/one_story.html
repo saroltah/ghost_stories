@@ -1,18 +1,38 @@
 {%extends "base.html"%}
-{% url 'writer_details' as writer_details %}
+{% url 'profiles:writer_details' as writer_details %}
 {% url 'edit_story' as edit_story %}
 {% url 'delete_story' as delete_story %}
+{% url 'stories' as story_list %}
+{% url 'add_comment' as add_comment %}
+{% url 'edit_comment' as edit_comment %}
+{% url 'delete_comment' as delete_comment %}
+
 
 {%block content%}
 <section id="one_story">
   <h1>{{story.title}}</h1>
   <p class="author">
     by
-    {{story.author}} </a></p>
+    <a href="#" class="writer"> {{story.author}} </a></p>
   <div class="edit"><a href="{% url 'edit_story' story.slug%}" class="edit"> Edit </a> or <a
       href="{% url 'delete_story' story.slug%}" class="edit"> Delete </a></div>
   <div class="date"><small>{{story.created_on}}</small>
     <small>edited:{{story.edited}}</small></div>
   <p>{{story.story_text}}</p>
+  <div class="comments">
+    <h3>Comments</h3>
+    <a href="{% url 'add_comment' story.slug%}">Add comment</a>
+    {%for comment in comments%}
+    <hr />
+    <div>{{comment.author}}</div>
+    <div>{{comment.content}}</div>
+    <small>{{comment.created_on}}</small>
+    <br>
+    <a href="{% url 'edit_comment' story.slug%}">Edit</a>
+    <a href="{% url 'delete_comment' story.slug%}">Delete</a>
+    <hr />
+    {%endfor%}
+  </div>
+  <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
 </section>
 {%endblock%}

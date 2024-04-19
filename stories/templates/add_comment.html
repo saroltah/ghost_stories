@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+
+{%block content%}
+<section class="add_story">
+  <h1>Comment {{story.title}}</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Comment</button>
+  </form>
+</section>
+{%endblock%}

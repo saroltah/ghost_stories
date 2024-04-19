@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from profiles.models import Writer
 from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 
@@ -21,15 +22,19 @@ class Story(models.Model):
     ordering = ["-created_on"]
 
   def __str__(self):
-    return f"{self.title} written by {self.author}. {self.teaser}"
+    return f"{self.title} written by {self.author}"
 
   
   def get_absolute_url(self):
     return reverse("one_story", kwargs={"slug": self.slug})
 
+  def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 class Comment(models.Model):
-  author = models.OneToOneField(Writer, on_delete=models.CASCADE)
+  author = models.ForeignKey(Writer, on_delete=models.CASCADE)
   content	= models.TextField()		
   created_on	= models.DateTimeField(auto_now_add=True)
   commented_story = models.ForeignKey(Story, on_delete=models.CASCADE, related_name="comments")
