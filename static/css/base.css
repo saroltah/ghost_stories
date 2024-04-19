@@ -194,6 +194,22 @@ footer {
   color: red
 }
 
+#one_story button {
+  display: block;
+  text-align: center;
+  background-color: black;
+  border: 1px solid red;
+  margin: 40px auto
+}
+
+#one_story button a {
+  text-align: center;
+  text-decoration: none;
+  color: red
+}
+
+
+
 /*about and terms*/
 .about-and-terms {
   margin: 30px auto;

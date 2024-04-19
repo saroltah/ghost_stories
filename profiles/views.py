@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Writer
 
 
-class Writer_details(generic.DetailView):
+class WriterDetails(generic.DetailView):
     model = Writer
     template_name = "writer_detail.html"
     
