@@ -2,6 +2,7 @@
 
 {%block content%}
 <div class="add_story">
+  {% if user.is_authenticated %}
   <h1>Edit {{story.title}}</h1>
 
   <form method="POST">
@@ -9,5 +10,8 @@
     {{form.as_p}}
     <button>Update</button>
   </form>
+  {%else%}
+  <h3> To read and edit stories, please log in</h3>
+  {%endif%}
 </div>
 {%endblock%}

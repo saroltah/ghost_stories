@@ -2,6 +2,7 @@
 
 {%block content%}
 <section id="writer">
+  {%if user.is_authenticated%}
   <h1>{{writer.username}}</h1>
   <div class="grid-container">
     <div> <img src="{{writer.photo}}" alt="Image"></div>
@@ -11,5 +12,8 @@
     </div>
   </div>
   <p>about me: {{writer.about_me}}</p>
+  {%else%}
+  <h3> To see the profile, please log in</h3>
+  {%endif%}
 </section>
 {%endblock%}

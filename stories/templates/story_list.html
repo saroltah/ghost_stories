@@ -4,6 +4,7 @@
 
 {%block content%}
 <section id="story-list">
+  {% if user.is_authenticated %}
   <div class="new-story">
     <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
   </div>
@@ -17,5 +18,10 @@
         more</a></button>
   </div>
   {%endfor%}
+  {%else%}
+  <h3> To read stories, please log in</h3>
+  {%endif%}
 </section>
+
+
 {%endblock%}

@@ -2,6 +2,7 @@
 
 {%block content%}
 <section class="add_story">
+  {% if user.is_authenticated %}
   <h1>Write your story</h1>
 
   <form method="POST">
@@ -9,5 +10,8 @@
     {{form.as_p}}
     <button>Post</button>
   </form>
+  {%else%}
+  <h3> To add stories, please log in</h3>
+  {%endif%}
 </section>
 {%endblock%}

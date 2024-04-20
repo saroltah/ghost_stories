@@ -10,6 +10,7 @@
 
 {%block content%}
 <section id="one_story">
+  {% if user.is_authenticated %}
   <h1>{{story.title}}</h1>
   <p class="author">
     by
@@ -34,5 +35,8 @@
     {%endfor%}
   </div>
   <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
+  {%else%}
+  <h3> To read stories, please log in</h3>
+  {%endif%}
 </section>
 {%endblock%}
