@@ -1,110 +1,125 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Ghost stories
 
-Welcome USER_NAME,
+Live website: 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Goal of the website
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+A community of short story writers specified on horror genres (ghost, vampire, etc.). The website is for amatour writers to show off their works, and for editors, who would like to find new talents.
 
-## Gitpod Reminders
+## Planning
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1. I draw wireframe, how the website should look like, what pages should have
+2. Created user stories
+3. Planned my URL paths
+4. Made a model relationship diagram
 
-`python3 -m http.server`
+### Wireframe
 
-A blue button should appear to click: _Make Public_,
+### Design
 
-Another blue button should appear to click: _Open Browser_.
+- Colors:
+- Fonts:
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User experience
 
-A blue button should appear to click: _Make Public_,
+## Epics and user storys
 
-Another blue button should appear to click: _Open Browser_.
+I divided my user stories to different categories, and also labelled them. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1. Epic: 
 
-To log into the Heroku toolbelt CLI:
+### Existing features
+### Future features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+ - Writer can chose, to share the story with username or real name.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+ - Program to be unable to add the same titles
 
-------
+## Deployment and forking
 
-## Release History
+- Github:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Heroku
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Work progress
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+As my first django project, I was not able to guess the time frame for the different tasks, but with more practice I will be able to follow categories better.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+I followed the agile methos, and MoSCOw labelling - must have, should have, could have and won't have. I was prioritizing, and did first what was most important, than left the not important things to the end, set up the won't have features as future future feature.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+I was making notes continuosly, so I wrote down new ideas, what is working what is not, where I need to go back. Where I met with an error couldn't handle, rather moved on due to the time frame I have, and decided to return later.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+I worked on more user stories simultaneously.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+1. Set up my django, and set up .env file before publishing with my secret code.  
+bug: I added env.py instead of .env to gitignore.. so published my secret key accidentally. I made a new secret key. Stopped following .env with this code:
+git rm --cached .env
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+2. I published the site on Heroku. I used an example page just to see if it was working.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+3. I wrote epics and user stories.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+4. I created the URL connections.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+5. I created the model relationship tables.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+6. I created the database.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+7. I installed the authentication, all auth.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+8. I worked on my models (according to my Excel sheet): profiles, stories, and comments.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+9. I imported elements to the administration site, logged in, and checked if everything was working.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+10. I added methods to classes.
 
-------
+11. I added comments and like classes to the stories.
 
-## FAQ about the uptime script
+12. I added stories views. I used generic views, so it can inherit from it. I added a template and URL. I set up a test page, to make sure the template, the URL, the views, and models are connected right. 
 
-**Why have you added this script?**
+13. I added the same files views and urls to to profiles - (I named the url users, that sounds better). Added slugs also.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+14. I added stories through admin panel, so I can see how page will look.
 
-**How will this affect me?**
+15. I set up homepage with template and view.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+16. I created basic html pages for index, stories and profiles, to see, it is working.  - I deployed it also, and check if everything is working.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+17. I set up the authentication (I already have downloaded before) - installed all folders and files.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+18. (so far: we had user site, stories site, can log in and out), I Styled the website - base.html, so I add the rest of the links, buttons, etc to the right place, and can create more templates with visuals.
 
-**So….?**
+19.  Add edit and delete view. Style them. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Languages
 
-**Can I opt out?**
+### Tools
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Technologies
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- all auth
 
-**Anything more?**
+## Testing and validation
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Error handling and bugs
 
----
+1. ERROR: ImportError: cannot import name 'Stories' from partially initialized module 'stories.models' (most likely due to a circular import) 
 
-Happy coding!
+2. After adding models, I had couple of mistakes, run the terminal, which showed the erors one by one. Mistake 1: Blank should be blank. Mistake 2: I can not put onDelete on CharField.
+
+3. Error while setting up writer view, 'Generic detail view Writer must be called with either an object pk or a slug in the URLconf.' - so I added slug.
+
+## Credits and sources
+
+- git rm --cached .env: 
+
+[dev.to](https://dev.to/dailydevtips1/removing-a-env-file-from-git-history-3gao)
+
+- model qualties: 
+ [official django documentation](https://docs.djangoproject.com/en/5.0/ref/models/options/)
+
+ - learning more about slug urls:
+ [Learn django]( https://learndjango.com/tutorials/django-slug-tutorial)
+
+ - all stories, about and terms text were written by:
+ [chatgpt](https://chat.openai.com/)
