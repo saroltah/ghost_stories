@@ -1,13 +1,14 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from autoslug import AutoSlugField
 
 # Create your models here.
 
 class Writer(models.Model):
   name	= models.CharField(max_length=50)
   username = models.CharField(max_length=50)
-  slug = models.SlugField (unique=True, null=True)
+  slug = AutoSlugField (unique=True, populate_from='username')
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)
@@ -23,7 +24,7 @@ class Writer(models.Model):
 class Editor(models.Model):
   name = models.CharField(max_length=50)
   username = models.CharField(max_length=50)
-  slug = models.SlugField (unique=True, null=True)
+  slug = AutoSlugField (unique=True, populate_from='name')
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
