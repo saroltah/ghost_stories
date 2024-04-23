@@ -20,7 +20,7 @@
       href="{% url 'delete_story' story.slug%}" class="edit"> Delete </a></div>
   <div class="date"><small>{{story.created_on}}</small>
     <small>edited:{{story.edited}}</small></div>
-  <p>{{story.story_text}}</p>
+  <p>{{story.story_text|safe}}</p>
   <div class="comments">
     <h3>Comments</h3>
     <a href="{% url 'add_comment' story.slug%}">Add comment</a>
