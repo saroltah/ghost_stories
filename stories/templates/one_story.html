@@ -7,8 +7,6 @@
 {% url 'edit_comment' as edit_comment %}
 {% url 'delete_comment' as delete_comment %}
 {% block title%}: {{story.title}} {% endblock %}
-
-
 {%block content%}
 <section id="one_story">
   {% if user.is_authenticated %}
@@ -23,17 +21,40 @@
   <p>{{story.story_text|safe}}</p>
   <div class="comments">
     <h3>Comments</h3>
-    <a href="{% url 'add_comment' story.slug%}">Add comment</a>
-    {%for comment in comments%}
+
+    <!--   <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div>placeholder for comment</div>
+          <form method="POST" action="{% url 'one_story' slug=story.slug%}">
+            {%csrf_token%} 
+            <div class=" form-group">
+              {{form}}
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>-->
+
+    {% if not story.comments.all %}
+    No comments yet.
+    <a href="{% url 'add_comment' slug=story.slug %}">Add one! </a>
+    {% else %}
+    <a href="{% url 'add_comment' slug=story.slug %}">Add comment</a> <br>
+    {% for comment in story.comments.all %}
     <hr />
     <div>{{comment.author}}</div>
     <div>{{comment.content}}</div>
     <small>{{comment.created_on}}</small>
     <br>
+    <br>
     <a href="{% url 'edit_comment' story.slug%}">Edit</a>
     <a href="{% url 'delete_comment' story.slug%}">Delete</a>
     <hr />
-    {%endfor%}
+    {% endfor %}
+    {% endif %}
+
   </div>
   <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
   {%else%}

@@ -37,15 +37,16 @@ class Story(models.Model):
   def __str__(self):
     return f"{self.title} written by {self.author}"
 
-  
-  def get_absolute_url(self):
-    return reverse("one_story", kwargs={"slug": self.slug})
+
 
 class Comment(models.Model):
   author = models.ForeignKey(Writer, on_delete=models.CASCADE)
   content	= models.TextField()		
   created_on	= models.DateTimeField(auto_now_add=True)
-  commented_story = models.ForeignKey(Story, on_delete=models.CASCADE, related_name="comments")
+  commented_story = models.ForeignKey(Story, on_delete=models.CASCADE, related_name="comments",)
+
+  def get_absolute_url(self):
+    return reverse("one_story", kwargs={"slug": self.story.slug})
 
   class Meta:
     ordering = ["-created_on"]
@@ -55,7 +56,6 @@ class Comment(models.Model):
 
   def number_of_comments(self):
     return self.content.count
-
 
 class Like(models.Model):
   user = models.OneToOneField(Writer, on_delete=models.CASCADE)

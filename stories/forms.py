@@ -1,5 +1,5 @@
 from django import forms
-from .models import Story
+from .models import Story, Comment
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django_summernote.fields import SummernoteTextFormField, SummernoteTextField 
 
@@ -27,3 +27,11 @@ class StoryForm(forms.ModelForm):
 
 #class StoryForm(forms.ModelForm):
 #    story_text = SummernoteTextField()
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('author','content',)
+
+        widgets = {'author': forms.TextInput,
+        'content':forms.Textarea}

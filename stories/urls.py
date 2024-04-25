@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import StoryList, AddStory, OneStory, EditStory
+from .views import StoryList, AddStory, OneStory, EditStory, DeleteStory, AddComment, EditComment, DeleteComment,
 
 urlpatterns = [
     path('', views.StoryList.as_view(), name='stories'),
