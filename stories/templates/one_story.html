@@ -8,6 +8,7 @@
 {% url 'delete_comment' as delete_comment %}
 {% block title%}: {{story.title}} {% endblock %}
 {%block content%}
+
 <section id="one_story">
   {% if user.is_authenticated %}
   <h1>{{story.title}}</h1>
