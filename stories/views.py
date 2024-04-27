@@ -3,6 +3,7 @@ from django.views import generic
 from .models import Story, Comment
 from django.urls import reverse_lazy
 from .forms import StoryForm, CommentForm
+from django.contrib.auth.models import User
 
 
 
@@ -24,7 +25,8 @@ class AddStory(generic.CreateView):
     model = Story
     form_class = StoryForm
     template_name = "add_story.html"
-    #fields = '__all__'
+    success_url = reverse_lazy('stories')
+    #fields = '__all__'    
 
 class EditStory(generic.UpdateView):
     model = Story
