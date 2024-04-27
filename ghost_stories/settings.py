@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'stories',
-    'profiles',
+    'profiles.apps.ProfilesConfig',
 ]
 
 SITE_ID = 1
