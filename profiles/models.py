@@ -20,7 +20,7 @@ class Writer(models.Model):
     return str(self.user)
 
   def get_absolute_url(self):
-    return reverse("writer_details", kwargs={"writer_slug": self.slug})
+    return reverse("profile", kwargs={"slug": self.slug})
 
 #class Editor(models.Model):
 #  name = models.CharField(max_length=50)
