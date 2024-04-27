@@ -4,11 +4,12 @@ from profiles.models import Writer
 from django.urls import reverse
 from autoslug import AutoSlugField
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Story(models.Model):
-  author = models.CharField(max_length=100)	
+  author = models.ForeignKey(Writer, on_delete=models.CASCADE)		
   title	= models.CharField(max_length=100)	
   slug = AutoSlugField (unique=True, populate_from='title')
   story_text = models.TextField(default='')
