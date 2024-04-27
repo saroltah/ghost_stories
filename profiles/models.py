@@ -8,8 +8,8 @@ from django.contrib.auth.models import User
 class Writer(models.Model):
   user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
   name	= models.CharField(max_length=50)
-  username = models.CharField(max_length=50)
-  slug = AutoSlugField (unique=True, populate_from='username')
+  username = models.CharField (max_length=50, primary_key=True)
+  slug = AutoSlugField (unique=True, populate_from = 'username')
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)
@@ -21,6 +21,11 @@ class Writer(models.Model):
 
   def get_absolute_url(self):
     return reverse("profile", kwargs={"slug": self.slug})
+
+  def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.username)
+        return super().save(*args, **kwargs)
 
 #class Editor(models.Model):
 #  name = models.CharField(max_length=50)
