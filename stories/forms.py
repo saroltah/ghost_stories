@@ -8,6 +8,7 @@ class StoryForm(forms.ModelForm):
     model = Story
     fields = 'title', 'author', 'story_text', 'teaser', 'keywords', 'image',
     widgets = {
+      'author': forms.HiddenInput,
       'story_text': SummernoteWidget(),
     }
 

@@ -11,6 +11,12 @@
     {{form.as_p}}
     <button>Post</button>
   </form>
+
+  <script>
+    var authorusername = "{{user.username}}";
+    var automaticusername = document.getElementById("id_author")
+    automaticusername.value = authorusername
+  </script>
   {%else%}
   <h3> To add stories, please log in</h3>
   {%endif%}
