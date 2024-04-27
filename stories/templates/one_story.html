@@ -11,11 +11,6 @@
 
 <section id="one_story">
   {% if user.is_authenticated %}
-  {% if user.username == story.author.username%}
-  Condition is true
-  {%else%}
-  false
-  {% endif %}
 
   <h1>{{story.title}}</h1>
   <p class="author">
