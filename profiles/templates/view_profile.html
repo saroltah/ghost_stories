@@ -4,6 +4,7 @@
 {%block content%}
 <section id="writer">
   {%if user.is_authenticated%}
+
   <h1>{{writer.username}}</h1>
   <div class="grid-container">
     <div> <img src="{{writer.photo}}" alt="Image"></div>
@@ -13,9 +14,15 @@
       <p>About_me: {{writer.about_me}}</p>
       <p>Download my resume: <a href="{{writer.resume}}"></a></p>
       <p>about me: {{writer.about_me}}</p>
+
+      {% if user.username == writer.username %}
+
       <div class="edit"><a href="{% url 'edit_profile' writer.slug %}" class="edit"> Edit </a>
       </div>
+      {% endif %}
     </div>
+
+
     {%else%}
     <h3> To see the profile, please log in</h3>
     {%endif%}
