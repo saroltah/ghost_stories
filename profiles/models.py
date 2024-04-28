@@ -24,7 +24,7 @@ class Writer(models.Model):
     super().save(*args, **kwargs)
 
   def get_absolute_url(self):
-    return reverse("profile", kwargs={"slug": self.slug})
+    return reverse("view_profile", kwargs={"slug": self.slug})
     
 #class Editor(models.Model):
 #  name = models.CharField(max_length=50)
