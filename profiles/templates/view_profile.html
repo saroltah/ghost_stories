@@ -1,4 +1,5 @@
 {%extends "base.html"%}
+{% url 'edit_profile' as edit_profile %}
 
 {%block content%}
 <section id="writer">
@@ -9,11 +10,14 @@
     <div>
       <p>name: {{writer.name}}</p>
       <p>email: {{writer.email}}</p>
+      <p>About_me: {{writer.about_me}}</p>
+      <p>Download my resume: <a href="{{writer.resume}}"></a></p>
+      <p>about me: {{writer.about_me}}</p>
+      <div class="edit"><a href="{% url 'edit_profile' writer.slug %}" class="edit"> Edit </a>
+      </div>
     </div>
-  </div>
-  <p>about me: {{writer.about_me}}</p>
-  {%else%}
-  <h3> To see the profile, please log in</h3>
-  {%endif%}
+    {%else%}
+    <h3> To see the profile, please log in</h3>
+    {%endif%}
 </section>
 {%endblock%}

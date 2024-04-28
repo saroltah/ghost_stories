@@ -15,7 +15,7 @@
   <h1>{{story.title}}</h1>
   <p class="author">
     by
-    <a href="{% url 'view_profile' writer.slug %}" class="writer"> {{story.author}}</a></p>
+    <a href="{% url 'view_profile' story.author.slug %}" class="writer"> {{story.author}}</a></p>
 
   {% if user.username == story.author.username %}
 
