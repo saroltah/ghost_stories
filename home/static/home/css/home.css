@@ -1,0 +1,40 @@
+#homepage {
+  text-align: center;
+  margin-top: 60px;
+  min-height: 100%;
+  position: relative;
+  margin-bottom: 60px
+}
+
+#homepage h3 {
+  margin: 30px 0px 50px 0px
+}
+
+#homepage a {
+  text-decoration: none;
+  color: red;
+  padding: 20px;
+  border: 1px solid red;
+  margin: 30px
+}
+
+/*about and terms*/
+.about-and-terms {
+  margin: 30px auto;
+  width: 80%
+}
+
+.about-and-terms h1 {
+  text-align: center;
+  margin: 30px
+}
+
+.about-and-terms p {
+  text-align: justify;
+  margin: 40px
+}
+
+.about-and-terms li {
+  margin: 20px;
+  text-align: justify
+}

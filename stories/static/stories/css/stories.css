@@ -1,0 +1,143 @@
+/*stories, one_story*/
+#story-list,
+#one_story {
+  margin: 50px 20px;
+}
+
+.one-story {
+  margin: 30px 0px;
+  text-align: justify
+}
+
+#story-list h1,
+#one_story h1 {
+  text-align: center;
+  margin: 30px;
+  color: green;
+  border: 3px solid yellow;
+}
+
+#story-list h3 {
+  color: red;
+  text-align: center
+}
+
+#story-list .author,
+#one_story .author {
+  font-style: italic;
+  margin-bottom: 30px;
+  text-align: center
+}
+
+#story-list button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 20px;
+  border-radius: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.new-story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+.new-story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
+.new-story a {
+  text-decoration: none;
+  color: white
+}
+
+#one_story p {
+  margin: 30px;
+  text-align: justify;
+}
+
+#one_story .date {
+  text-align: right;
+}
+
+.edit {
+  text-align: center;
+}
+
+.edit a {
+  color: red
+}
+
+#one_story button {
+  display: block;
+  text-align: center;
+  background-color: black;
+  border: 1px solid red;
+  margin: 40px auto
+}
+
+#one_story button a {
+  text-align: center;
+  text-decoration: none;
+  color: red
+}
+
+/*add story*/
+.add_story {
+  margin: 40px
+}
+
+.add_story h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.add_story form {
+  width: 70%;
+  margin: 0px auto
+}
+
+.add_story textarea,
+.add_story input {
+  width: 100%
+}
+
+.add_story label {
+  color: red;
+  margin: 20px 0px;
+  font-size: 30px;
+}
+
+.add_story button {
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+  padding: 30px;
+  border-radius: 30%;
+  display: block;
+  margin: 30px auto;
+  font-size: 30px
+}
+
+.add_story button:hover {
+  background-color: red;
+  border: 1px solid white;
+}
+
+/* media */
+
+@media (max-width: 769px) {
+  #add_story form {
+    width: 95%;
+  }
+}
