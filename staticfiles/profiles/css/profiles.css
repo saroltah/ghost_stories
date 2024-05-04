@@ -17,3 +17,8 @@
   text-align: justify;
   margin: 40px
 }
+
+.profile-image {
+  display: block;
+  max-width: 800px;
+}

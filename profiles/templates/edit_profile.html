@@ -6,7 +6,6 @@
 {% if user.username == writer.username %}
 <div class="add_story">
   <h1>Edit your profile</h1>
-  Hellooooo
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}

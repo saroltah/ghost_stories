@@ -13,9 +13,11 @@ class Writer(models.Model):
   slug = models.SlugField (unique=True)
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
-  photo	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)
-  about_me = models.TextField(blank=True, max_length=300)	
-  resume = models.FileField(blank=True)
+  photo	= models.ImageField(blank=True, default='example.jpg')
+  about_me = models.TextField(blank=True, max_length=300)
+  facebook_link = models.CharField(blank=True, max_length=100)
+  instagram_link = models.CharField(blank=True, max_length=100)
+  linkedin_link = models.CharField(blank=True, max_length=100)
 
   def __str__(self):
     return str(self.user)

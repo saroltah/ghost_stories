@@ -7,13 +7,27 @@
 
   <h1>{{writer.username}}</h1>
   <div class="grid-container">
-    <div> <img src="{{writer.photo}}" alt="Image"></div>
     <div>
-      <p>name: {{writer.name}}</p>
-      <p>email: {{writer.email}}</p>
-      <p>About_me: {{writer.about_me}}</p>
-      <p>Download my resume: <a href="{{writer.resume}}"></a></p>
-      <p>about me: {{writer.about_me}}</p>
+      <img class="img-fluid" src="{{writer.photo.url}}" alt="profile image" width="400"></div>
+    <div>
+      <p>Name: {{writer.name}}</p>
+      <p>Email: {{writer.email}}</p>
+      <p>About me: {{writer.about_me}}</p>
+      <p>Follow me on social media:
+
+        {%if writer.facebook_link %}
+        <a href="{{writer.facebook_link}}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        {%endif%}
+
+        {%if writer.instagram_link%}
+        <a href="{{writer.instagram_link}}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        {%endif%}
+
+        {%if writer.linkedin_link%}
+        <a href="{{writer.linkedin_link}}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        {%endif%}
+
+      </p>
 
       {% if user.username == writer.username %}
 
@@ -26,5 +40,6 @@
     {%else%}
     <h3> To see the profile, please log in</h3>
     {%endif%}
+
 </section>
-{%endblock%}
+{% endblock %}
