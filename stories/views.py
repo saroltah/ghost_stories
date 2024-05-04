@@ -5,6 +5,7 @@ from django.urls import reverse_lazy, reverse
 from .forms import StoryForm, CommentForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 
 
@@ -39,18 +40,29 @@ class AddStory(generic.CreateView):
     form_class = StoryForm
     template_name = "add_story.html"
     success_url = reverse_lazy('stories')
-    #fields = '__all__'    
+    #fields = '__all__'
+    def form_valid(self, form):
+        messages.success(self.request, 'Your story is posted!')
+        return super().form_valid(form)
+ 
 
 class EditStory(generic.UpdateView):
     model = Story
     form_class = StoryForm
     template_name = "edit_story.html"
     #fields = ['title', 'story_text', 'teaser', 'keywords', 'image']
+    def form_valid(self, form):
+        messages.success(self.request, 'Story edited')
+        return super().form_valid(form)
 
 class DeleteStory(generic.DeleteView):
     model = Story
     template_name = "delete_story.html"
-    success_url = reverse_lazy('stories') 
+    success_url = reverse_lazy('stories')
+    def form_valid(self, form):
+        messages.success(self.request, 'Story deleted!')
+        return super().form_valid(form)
+    
 
 class FilterStory(generic.ListView):
     model = Story
@@ -62,6 +74,9 @@ class AddComment(generic.CreateView):
    fields = '__all__'
    def get_success_url(self):
       return reverse_lazy('one_story', kwargs={'slug': self.object.commented_story.slug})
+   def form_valid(self, form):
+        messages.success(self.request, 'Comment added')
+        return super().form_valid(form)
 
 
 class EditComment(generic.UpdateView):
