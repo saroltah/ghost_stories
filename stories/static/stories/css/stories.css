@@ -6,7 +6,9 @@
 
 .one-story {
   margin: 30px 0px;
-  text-align: justify
+  text-align: justify;
+  background-color: white;
+  color: blue;
 }
 
 #story-list h1,

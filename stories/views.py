@@ -4,6 +4,7 @@ from .models import Story, Comment
 from django.urls import reverse_lazy
 from .forms import StoryForm, CommentForm
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 
 
 
@@ -20,6 +21,7 @@ class OneStory(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['comments'] = Comment.objects.filter(commented_story=self.object)
         return context
+
 
 class AddStory(generic.CreateView):
     model = Story
@@ -42,7 +44,7 @@ class DeleteStory(generic.DeleteView):
 class FilterStory(generic.ListView):
     model = Story
     template_name = 'filter_story.html'
-  
+
 class AddComment(generic.CreateView):
    model  = Comment
    template_name = "add_comment.html"

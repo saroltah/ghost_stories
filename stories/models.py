@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class Story(models.Model):
   author = models.ForeignKey(Writer, on_delete=models.CASCADE)		
-  title	= models.CharField(max_length=100)	
+  title	= models.CharField(max_length=100, unique=True)	
   slug = AutoSlugField (unique=True, populate_from='title')
   story_text = models.TextField(default='')
   teaser = models.TextField(max_length=500)
@@ -24,7 +24,7 @@ class Story(models.Model):
     ordering = ["-created_on"]
 
   def __str__(self):
-    return f"{self.title} written by {self.author}"
+    return f"{self.title}"
 
   
   def get_absolute_url(self):
@@ -34,11 +34,6 @@ class Story(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
-
-  def __str__(self):
-    return f"{self.title} written by {self.author}"
-
-
 
 class Comment(models.Model):
   author = models.ForeignKey(Writer, on_delete=models.CASCADE)

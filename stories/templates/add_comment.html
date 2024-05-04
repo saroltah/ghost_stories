@@ -3,12 +3,20 @@
 
 {%block content%}
 <section class="add_story">
-  <h1>Comment {{story.title}}</h1>
-
+  <h1>Comment on {{title}} {{story.title}} {{comment.commented_story.title}} {{commented_story.story.title}}</h1>
+  {{story.pk}} {{one_story.pk}}{{comment.commented_story.pk}}
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button>Comment</button>
   </form>
+  <script>
+    var commentorname = "{{user.username}}";
+    var automatic_commentorname = document.getElementById("id_author");
+    automatic_commentorname.value = commentorname;
+    var commentedstory = "{{one_story.pk}}";
+    var automatic_commentedstory = document.getElementById("id_commented_story");
+    automatic_commentedstory.value = commented_story;
+  </script>
 </section>
 {%endblock%}
