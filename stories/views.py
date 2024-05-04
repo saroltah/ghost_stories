@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Story, Comment
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .forms import StoryForm, CommentForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -20,7 +20,18 @@ class OneStory(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comments'] = Comment.objects.filter(commented_story=self.object)
+        
+        one_story_slug = self.kwargs.get('slug')
+        likes = get_object_or_404(Story, slug=one_story_slug)
+        number_of_likes = likes.number_of_likes()
+        context['number_of_likes'] = number_of_likes
+        
         return context
+
+def LikeStory(request, slug):
+    story = get_object_or_404(Story, slug=request.POST.get('story_slug'))
+    story.likes.add(request.user)
+    return HttpResponseRedirect(reverse('one_story', kwargs={'slug':slug}))
 
 
 class AddStory(generic.CreateView):

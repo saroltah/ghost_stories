@@ -18,6 +18,7 @@ class Story(models.Model):
   image	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
   created_on	= models.DateTimeField(auto_now_add=True)
   edited = models.DateTimeField	(auto_now=True)
+  likes = models.ManyToManyField(User, related_name="liked_stories")
   
 
   class Meta:
@@ -34,6 +35,9 @@ class Story(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+  
+  def number_of_likes(self):
+    return self.likes.count()
 
 class Comment(models.Model):
   author = models.ForeignKey(Writer, on_delete=models.CASCADE)
@@ -51,11 +55,5 @@ class Comment(models.Model):
     return f"{self.author} says: {self.content}."
 
   def number_of_comments(self):
-    return self.content.count
+    return self.content.count()
 
-class Like(models.Model):
-  user = models.OneToOneField(Writer, on_delete=models.CASCADE)
-  liked_story = models.ForeignKey(Story, on_delete=models.CASCADE, related_name="likes")
-
-  def number_of_likes(self):
-    return self.content.count

@@ -27,6 +27,11 @@
   <div class="date"><small>{{story.created_on}}</small>
     <small>edited:{{story.edited}}</small></div>
   <p>{{story.story_text|safe}}</p>
+
+  <form action="{%url 'like_story' story.slug %} " method="POST">
+    {% csrf_token %}
+    <button type="submit" name="story_slug" value="{{story.slug}}">LIKE</button> {{number_of_likes}} Likes
+  </form>
   <div class="comments">
     <h3>Comments</h3>
 
