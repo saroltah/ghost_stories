@@ -21,7 +21,7 @@ class Writer(models.Model):
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, default='example.jpg')
-  about_me = models.TextField(blank=True, max_length=300)
+  about_me = models.TextField(blank=True)
   facebook_link = models.CharField(blank=True, max_length=100)
   instagram_link = models.CharField(blank=True, max_length=100)
   linkedin_link = models.CharField(blank=True, max_length=100)
