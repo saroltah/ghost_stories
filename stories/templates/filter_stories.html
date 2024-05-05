@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{% url 'one_story' as one_story %}
+{% block title%}: Read all stories {% endblock %}
+
+{%block content%}
+<section id="story-list">
+  {% if user.is_authenticated %}
+  {%if searched_keyword%}
+
+  <h1>Stories with keyword: {{searched_keyword}}</h1>
+  {%for matching_keyword in matching_keywords%}
+  <a href="{% url 'one_story' matching_keyword.slug %}">{{matching_keyword}} by {{matching_keyword.author}}</a>
+  {%endfor%}
+  {%else%}
+  <h1>Search for something!</h1>
+  {%endif%}
+  {%else%}
+  <h3> To read stories, please log in</h3>
+  {%endif%}
+</section>
+
+
+{%endblock%}

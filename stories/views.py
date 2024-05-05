@@ -44,7 +44,7 @@ class AddStory(generic.CreateView):
     def form_valid(self, form):
         messages.success(self.request, 'Your story is posted!')
         return super().form_valid(form)
- 
+    
 
 class EditStory(generic.UpdateView):
     model = Story
@@ -64,19 +64,35 @@ class DeleteStory(generic.DeleteView):
         return super().form_valid(form)
     
 
-class FilterStory(generic.ListView):
-    model = Story
-    template_name = 'filter_story.html'
+def filter_stories(request):
+    if request.method== "POST":
+        searched_keyword = request.POST['searched_keyword']
+        matching_keywords = Story.objects.filter(keywords__contains=searched_keyword)
+        return render(request, 'filter_stories.html', {
+            'searched_keyword':searched_keyword,
+            'matching_keywords':matching_keywords
+        })
+    else:
+        return render(request, 'filter_stories.html', {})      
 
 class AddComment(generic.CreateView):
    model  = Comment
    template_name = "add_comment.html"
-   fields = '__all__'
+   form_class = CommentForm
+   #fields = '__all__'
    def get_success_url(self):
       return reverse_lazy('one_story', kwargs={'slug': self.object.commented_story.slug})
    def form_valid(self, form):
         messages.success(self.request, 'Comment added')
         return super().form_valid(form)
+        
+   def get_object(self, queryset=None):
+        story_slug = self.kwargs.get('slug')
+        comment_id = self.kwargs.get('comment_id', None)
+        if comment_id:
+            comment = get_object_or_404(Comment, id=comment_id, commented_story__slug=story_slug)
+        else:
+            comment = get_object_or_404(Comment, commented_story__slug=story_slug)
 
 
 class EditComment(generic.UpdateView):

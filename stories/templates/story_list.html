@@ -1,6 +1,7 @@
 {%extends "base.html"%}
 {% url 'one_story' as one_story %}
 {% url 'add_story' as add_story %}
+{% url 'filter_stories' as filter_stories %}
 {% block title%}: Read all stories {% endblock %}
 
 {%block content%}
@@ -10,6 +11,13 @@
     <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
   </div>
   <h1>Read all Stories</h1>
+  <!-- Filter-->
+  <form class="d-flex" method="POST" action="{%url 'filter_stories'%}">
+    {% csrf_token %}
+    <input type="search" placeholder="Type a keyword" aria-label="Search" name="searched_keyword">
+    <button type="submit">Search</button>
+  </form>
+  <!-- Story list-->
   {%for story in story_list%}
   <div class="one-story">
     <h3>{{story.title}} </h3>
