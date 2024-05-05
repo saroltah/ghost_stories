@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 {% block title%}: Edit profile {% endblock %}
+{% url 'view_profile' as view_profile %}
 
 {%block content%}
 {%if user.is_authenticated%}
@@ -16,4 +17,5 @@
 <h3>you have no access here</h3>
 {% endif %}
 {% endif %}
+<button><a href="{{ user.writer.get_absolute_url }}" class="edit"> Back </a></button>
 {%endblock%}

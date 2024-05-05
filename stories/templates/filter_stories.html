@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 {% url 'one_story' as one_story %}
+{% url 'stories' as stories %}
 {% block title%}: Read all stories {% endblock %}
 
 {%block content%}
@@ -17,6 +18,7 @@
   {%else%}
   <h3> To read stories, please log in</h3>
   {%endif%}
+  <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
 </section>
 
 

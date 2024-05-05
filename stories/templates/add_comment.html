@@ -1,10 +1,12 @@
 {%extends "base.html"%}
+{% url 'one_story' as one_story %}
 {% block title%}: Add a comment {% endblock %}
 
 {%block content%}
 <section class="add_story">
-  <h1>Comment on {{title}} {{story.title}} {{comment.commented_story.title}} {{commented_story.story.title}}</h1>
-  {{story.pk}} {{one_story.pk}}{{comment.commented_story.pk}}
+  <h1>Comment on {{title}} {{story.title}} {{comment.commented_story.title}} {{commented_story.story.title}}
+    {{story.pk}} {{one_story.pk}}{{comment.commented_story.pk}} {{ slug }}</h1>
+  {{ object.Story.title }} {{comments.title}}
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
@@ -14,9 +16,10 @@
     var commentorname = "{{user.username}}";
     var automatic_commentorname = document.getElementById("id_author");
     automatic_commentorname.value = commentorname;
-    var commentedstory = "{{one_story.pk}}";
+    var commentedstory = "{{comment.commented_story.slug}}";
     var automatic_commentedstory = document.getElementById("id_commented_story");
     automatic_commentedstory.value = commented_story;
   </script>
+  <button><a onClick="javascript:history.go(-1)" class=" edit"> Back </a></button>
 </section>
 {%endblock%}
