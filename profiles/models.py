@@ -11,6 +11,13 @@ class Writer(models.Model):
   name	= models.CharField(max_length=50)
   username = models.CharField (max_length=50, primary_key=True)
   slug = models.SlugField (unique=True)
+  GOAL_CHOICES = (
+    ("WRITER", "Writer"),
+    ("EDITOR", "Editor"),
+   )
+  goal = models.CharField(max_length=9,
+                  choices=GOAL_CHOICES,
+                  default="Writer")
   email	= models.EmailField(max_length=100)
   phone =	models.IntegerField
   photo	= models.ImageField(blank=True, default='example.jpg')
