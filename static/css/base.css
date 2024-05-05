@@ -1,5 +1,21 @@
+:root {
+  --grey-gradient: linear-gradient(1deg, rgba(0, 0, 0) 20%, rgb(44, 43, 44) 80%);
+  --dark-grey-color: #534f4d;
+  --light-grey-color: #9a9997;
+  --red-color: #a6071a;
+  --written-font: "Julee",
+    cursive;
+  --thick-written-font: "Permanent Marker",
+    cursive;
+  --light-written-font: "Allura",
+    cursive;
+  --basic-font: "Karla",
+    sans-serif;
+  --basic-text-shadow: 16px 12px 31px rgba(255, 255, 255, 0.8);
+  --basic-box-shadow: 9px 26px 54px 13px rgba(0, 0, 0, 0.2);
+}
+
 body {
-  background-color: black;
   color: white;
   min-width: 100vw;
   margin: 0;
