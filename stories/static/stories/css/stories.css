@@ -1,66 +1,110 @@
 /*stories, one_story*/
 #story-list,
-#one_story {
-  margin: 50px 20px;
-}
-
-.one-story {
-  margin: 30px 0px;
-  text-align: justify;
-  background-color: white;
-  color: blue;
-}
-
-#story-list h1,
-#one_story h1 {
-  text-align: center;
-  margin: 30px;
-  color: green;
-  border: 3px solid yellow;
-}
-
-#story-list h3 {
-  color: red;
-  text-align: center
-}
-
-#story-list .author,
-#one_story .author {
-  font-style: italic;
-  margin-bottom: 30px;
-  text-align: center
-}
-
-#story-list button {
-  background-color: black;
-  color: white;
-  border: 1px solid red;
-  padding: 20px;
-  border-radius: 30%;
-  display: block;
-  margin: 0 auto;
-}
-
-.new-story button {
-  background-color: black;
-  color: white;
-  border: 1px solid red;
-  padding: 30px;
-  border-radius: 30%;
-  display: block;
+#one-story {
   margin: 30px auto;
-  font-size: 30px
+  width: 90%;
+  text-align: center
 }
 
-.new-story button:hover {
-  background-color: red;
-  border: 1px solid white;
+#one-story h1 {
+  margin: 30px;
+  font-family: var(--written-font);
 }
 
-.new-story a {
+#story-list h2 {
+  text-shadow: var(--basic-text-shadow);
+  margin-top: 30px;
+  font-size: 40px;
+  font-family: var(--light-written-font)
+}
+
+#story-list .author a,
+#one_story .author a {
+  font-family: var(--light-written-font);
+  margin-bottom: 40px;
+  font-size: 30px;
+  color: var(--red-color);
+  text-decoration: none;
+  text-shadow: var(--basic-text-shadow);
+  margin-left: 3px
+}
+
+#story-list .author a:hover,
+#one_story .author a:hover {
+  color: white
+}
+
+.add-new-story button {
+  padding: 10px 20px;
+  box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
+  font-family: var(--written-font);
+  display: block;
+  margin: 30px 10px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.add-new-story button:hover {
+  color: white;
+  text-shadow: var(--white-text-shadow);
+  box-shadow: var(--basic-box-shadow);
+}
+
+.add-new-story a,
+.read-more a {
   text-decoration: none;
   color: white
 }
+
+.add-new-story button a:hover {
+  color: white
+}
+
+#story-list form {
+  display: block !important;
+  margin: 30px 10px;
+  text-align: right;
+  font-family: var(--written-font)
+}
+
+#story-list form button {
+  padding: 10px 20px;
+  box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
+  font-family: var(--written-font);
+  margin: 30px 10px;
+  font-size: 15px;
+  color: white
+}
+
+#story-list form input {
+  border: 1px solid var(--red-color);
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+#story-list form ::placeholder {
+  color: var(--red-color)
+}
+
+.read-more {
+  padding: 10px 20px;
+  background: transparent;
+  font-family: var(--written-font);
+  display: block;
+  margin: 30px auto;
+  margin-bottom: 90px;
+  font-size: 15px;
+  border: 1px solid var(--red-color);
+  font-size: 20px
+}
+
+#story-list .teaser {
+  text-align: justify
+}
+
+/* one story*/
 
 #one_story p {
   margin: 30px;
@@ -71,13 +115,6 @@
   text-align: right;
 }
 
-.edit {
-  text-align: center;
-}
-
-.edit a {
-  color: red
-}
 
 #one_story button {
   display: block;
@@ -105,7 +142,7 @@
 }
 
 .add_story form {
-  width: 70%;
+  width: 95%;
   margin: 0px auto
 }
 
@@ -138,8 +175,30 @@
 
 /* media */
 
-@media (max-width: 769px) {
+@media (min-width: 769px) {
   #add_story form {
-    width: 95%;
+    width: 70%;
+  }
+}
+
+@media(min-width:687px) {
+  #story-list .flexbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .column-left {
+    justify-content: start;
+  }
+
+  .column-right {
+    justify-content: end;
+  }
+
+  .add-new-story button,
+  #story-list form button,
+  #story-list form ::placeholder {
+    font-size: 20px
   }
 }

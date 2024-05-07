@@ -1,40 +1,72 @@
 #homepage {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
   min-height: 100%;
   position: relative;
-  margin-bottom: 60px
+  margin-bottom: 100px
 }
 
 #homepage h3 {
   margin: 30px 0px 50px 0px
 }
 
+#homepage .homepage_story_link {
+  font-family: var(--written-font);
+}
+
 #homepage a {
   text-decoration: none;
-  color: red;
+  color: var(--red-color);
   padding: 20px;
-  border: 1px solid red;
-  margin: 30px
+  margin: 30px;
+  text-shadow: var(--red-text-shadow);
+  font-size: 20px;
+  box-shadow: var(--red-box-shadow)
+}
+
+#homepage a:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+#homepage h1,
+#homepage h2 {
+  font-family: var(--thick-written-font);
+}
+
+#homepage h3,
+#homepage .flexbox {
+  font-family: var(--written-font);
 }
 
 /*about and terms*/
 .about-and-terms {
   margin: 30px auto;
-  width: 80%
+  width: 90%
 }
 
 .about-and-terms h1 {
   text-align: center;
-  margin: 30px
+  margin: 30px;
+  font-family: var(--written-font);
 }
 
 .about-and-terms p {
   text-align: justify;
-  margin: 40px
+  margin: 20px
 }
 
 .about-and-terms li {
   margin: 20px;
-  text-align: justify
+}
+
+
+@media (min-width: 992px) {
+  #homepage {
+    margin-bottom: 150px;
+  }
+
+  .about-and-terms {
+    width: 70%
+  }
 }

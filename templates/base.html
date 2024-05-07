@@ -37,7 +37,7 @@
         <a class="navbar-brand" href="{% url 'index' %}">GhostStories</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          Menu
         </button>
         <div class="collapse navbar-collapse left-side" id="navbarNav">
           <ul class="navbar-nav mr-auto">
@@ -59,7 +59,7 @@
             <li class="nav-item me-auto">
               <a class="nav-link" href="{{ user.writer.get_absolute_url }}">Profile as {{user.username}}</a>
             </li>
-            <li class=" nav-item me-auto">
+            <li class=" nav-item auth-menu-link">
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                 href="{% url 'account_logout' %}">Logout</a>
             </li>
@@ -68,7 +68,7 @@
               <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
                 href="{% url 'account_signup' %}">Register</a>
             </li>
-            <li class="nav-item me-auto ">
+            <li class="nav-item auth-menu-link">
               <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                 href="{% url 'account_login' %}">Login</a>
             </li>
@@ -103,10 +103,10 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div>Contact: <br> support@ghoststories.com
+      <div>Contact: <br> <span><a href="mailto:upport@ghoststories.com">support@ghoststories.com</a></span>
       </div>
       <div class="copy">
-        Copyright: <br><a href="https://saroltah.github.io/portfolio-2024/">Sarolta Hegyi</a> </div>
+        Copyright: <br><span><a href="https://saroltah.github.io/portfolio-2024/">Sarolta Hegyi</a></span> </div>
     </div>
   </footer>
   <!-- Script -->

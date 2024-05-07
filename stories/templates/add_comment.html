@@ -4,6 +4,7 @@
 
 {%block content%}
 <section class="add_story">
+  {% if user.is_authenticated %}
   <h1>Comment on {{title}} {{story.title}} {{comment.commented_story.title}} {{commented_story.story.title}}
     {{story.pk}} {{one_story.pk}}{{comment.commented_story.pk}} {{ slug }}</h1>
   {{ object.Story.title }} {{comments.title}}
@@ -20,6 +21,9 @@
     var automatic_commentedstory = document.getElementById("id_commented_story");
     automatic_commentedstory.value = commented_story;
   </script>
-  <button><a onClick="javascript:history.go(-1)" class=" edit"> Back </a></button>
+  {%else%}
+  <h3 class="no-access-message"> To add stories, please log in</h3>
+  {%endif%}
+  <button class="back-button"><a onClick="javascript:history.go(-1)"> Back </a></button>
 </section>
 {%endblock%}

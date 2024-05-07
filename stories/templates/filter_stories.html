@@ -16,9 +16,9 @@
   <h1>Search for something!</h1>
   {%endif%}
   {%else%}
-  <h3> To read stories, please log in</h3>
+  <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
-  <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
+  <button class="back-button"><a href="{% url 'stories' %}"> Back </a></button>
 </section>
 
 

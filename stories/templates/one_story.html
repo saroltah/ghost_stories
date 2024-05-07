@@ -70,9 +70,9 @@
     {% endif %}
 
   </div>
-  <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
+  <button class="back-button"><a href="{% url 'stories' %}"> Back </a></button>
   {%else%}
-  <h3> To read stories, please log in</h3>
+  <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
 </section>
 {%endblock%}

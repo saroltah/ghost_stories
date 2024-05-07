@@ -37,12 +37,12 @@
       <div class="edit"><a href="{% url 'edit_profile' writer.slug %}" class="edit"> Edit </a>
       </div>
       {% endif %}
-      <button><a onClick="javascript:history.go(-1)" class=" edit"> Back </a></button>
+      <button class="back-button"><a onClick="javascript:history.go(-1)"> Back </a></button>
     </div>
 
 
     {%else%}
-    <h3> To see the profile, please log in</h3>
+    <h3 class="no-access-message"> To see the profile, please log in</h3>
     {%endif%}
 
 </section>

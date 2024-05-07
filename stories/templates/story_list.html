@@ -8,30 +8,37 @@
 {%block content%}
 <section id="story-list">
   {% if user.is_authenticated %}
-  <div class="new-story">
-    <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
+  <div class="flexbox">
+    <div class="column-left">
+      <div class="add-new-story">
+        <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
+      </div>
+    </div>
+    <!-- Filter-->
+    <div class="column-right">
+      <form class="d-flex search-story" method="POST" action="{%url 'filter_stories'%}">
+        {% csrf_token %}
+        <input type="search" placeholder="Type a keyword" aria-label="Search" name="searched_keyword"
+          autocapitalize="off">
+        <button type="submit">Search!</button>
+      </form>
+    </div>
   </div>
-  <h1>Read all Stories</h1>
-  <!-- Filter-->
-  <form class="d-flex" method="POST" action="{%url 'filter_stories'%}">
-    {% csrf_token %}
-    <input type="search" placeholder="Type a keyword" aria-label="Search" name="searched_keyword">
-    <button type="submit">Search</button>
-  </form>
   <!-- Story list-->
   {%for story in story_list%}
   <div class="one-story">
-    <h3>{{story.title}} </h3>
-    <p class="author"> by <a href=" {% url 'view_profile' story.author.slug %}">{{story.author}}</a></p>
-    <p>{{story.teaser}}</p>
-    <button> <a href="{% url 'one_story' story.slug %}">Click here, to read
+    <h2>{{story.title}} </h2>
+    <p class="author"> by <a href=" {% url 'view_profile' story.author.slug %}"> {{story.author}}</a></p>
+    <p class="teaser">{{story.teaser}}</p>
+    <button class="read-more"> <a href="{% url 'one_story' story.slug %}">Read
         more</a></button>
+
   </div>
   {%endfor%}
   {%else%}
-  <h3> To read stories, please log in</h3>
+  <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
-  <button><a onClick="javascript:history.go(-1)" class=" edit"> Back </a></button>
+  <button class="back-button"><a onClick="javascript:history.go(-1)"> Back </a></button>
 </section>
 
 

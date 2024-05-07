@@ -18,8 +18,8 @@
     automaticusername.value = authorusername
   </script>
   {%else%}
-  <h3> To add stories, please log in</h3>
+  <h3 class="no-access-message"> To add stories, please log in</h3>
   {%endif%}
-  <button><a href="{% url 'stories' %}" class="edit"> Back </a></button>
+  <button class="back-button"><a href="{% url 'stories' %}"> Back </a></button>
 </section>
 {%endblock%}

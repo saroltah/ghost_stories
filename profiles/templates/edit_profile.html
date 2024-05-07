@@ -14,8 +14,8 @@
   </form>
 </div>
 {%else%}
-<h3>you have no access here</h3>
+<h3 class="no-access-message">you have no access here</h3>
 {% endif %}
 {% endif %}
-<button><a href="{{ user.writer.get_absolute_url }}" class="edit"> Back </a></button>
+<button class="back-button"><a href="{{ user.writer.get_absolute_url }}"> Back </a></button>
 {%endblock%}
