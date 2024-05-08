@@ -2,7 +2,7 @@
 {% block title%}: Edit story {% endblock %}
 
 {%block content%}
-<div class="add_story">
+<div class="add-edit-delete-story">
   {% if user.is_authenticated %}
   {% if user.username == story.author.username%}
   <h1>Edit {{story.title}}</h1>
@@ -17,6 +17,6 @@
   {%else%}
   <h3 class="no-access-message"> To read and edit stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a href="{% url 'one_story' story.slug%}"></a></button>
+  <button class="back-button"><a href="{% url 'one_story' story.slug %}"> Back </a></button>
 </div>
 {%endblock%}

@@ -4,14 +4,20 @@
 {% block title%}: Read all stories {% endblock %}
 
 {%block content%}
-<section id="story-list">
+<section id="filter-story">
   {% if user.is_authenticated %}
   {%if searched_keyword%}
 
-  <h1>Stories with keyword: {{searched_keyword}}</h1>
-  {%for matching_keyword in matching_keywords%}
-  <a href="{% url 'one_story' matching_keyword.slug %}">{{matching_keyword}} by {{matching_keyword.author}}</a>
-  {%endfor%}
+  <h1>Stories with keyword: <div>{{searched_keyword}}</div>
+  </h1>
+  <ul>
+    <li>
+      {%for matching_keyword in matching_keywords%}
+      <a href="{% url 'one_story' matching_keyword.slug %}">{{matching_keyword}}<span> by
+          {{matching_keyword.author}}</a></span>
+      {%endfor%}
+    </li>
+  </ul>
   {%else%}
   <h1>Search for something!</h1>
   {%endif%}

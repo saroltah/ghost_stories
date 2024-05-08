@@ -2,7 +2,7 @@
 {% block title%}: Delete story {% endblock %}
 
 {%block content%}
-<div id="delete_story">
+<div class="add-edit-delete-story">
   {% if user.is_authenticated %}
   {% if user.username == story.author.username%}
   <h1>Delete Story</h1>

@@ -6,33 +6,16 @@ from django_summernote.fields import SummernoteTextFormField, SummernoteTextFiel
 class StoryForm(forms.ModelForm):
   class Meta:
     model = Story
-    fields = 'title', 'author', 'story_text', 'teaser', 'keywords', 'image',
+    fields = 'title', 'author', 'story_text', 'teaser', 'keywords', 
     widgets = {
       'author': forms.HiddenInput,
       'story_text': SummernoteWidget(),
     }
 
-#class StoryForm(forms.ModelForm):
-#    class Meta:
-#        model = Story
-#        fields = ['story_text']
-#        widgets = {
-#            'story_text': SummernoteWidget(),
-#        }
-
-#class StoryForm(forms.ModelForm):
- # story_text = forms.TextField(widget=SummernoteWidget())
- # class Meta:
- #   model=Story
- #   fields=['story_text']
-
-#class StoryForm(forms.ModelForm):
-#    story_text = SummernoteTextField()
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('author','content',)
+        fields = ('author','content', 'commented_story')
 
-        widgets = {'author': forms.TextInput,
+        widgets = {'author': forms.HiddenInput,
         'content':forms.Textarea}

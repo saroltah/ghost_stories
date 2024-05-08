@@ -9,7 +9,7 @@
 {% block title%}: {{story.title}} {% endblock %}
 {%block content%}
 
-<section id="one_story">
+<section id="one-story">
   {% if user.is_authenticated %}
 
   <h1>{{story.title}}</h1>
@@ -24,14 +24,18 @@
 
 
   {%endif%}
-  <div class="date"><small>{{story.created_on}}</small>
-    <small>edited:{{story.edited}}</small></div>
+  <div class="date">
+    <small>{{story.edited}}</small></div>
   <p>{{story.story_text|safe}}</p>
 
-  <form action="{%url 'like_story' story.slug %} " method="POST">
-    {% csrf_token %}
-    <button type="submit" name="story_slug" value="{{story.slug}}">LIKE</button> {{number_of_likes}} Likes
-  </form>
+  <div class="likes">
+    <form action="{%url 'like_story' story.slug %} " method="POST">
+      {% csrf_token %}
+      <button type="submit" id="like-button" name="story_slug" value="{{story.slug}}"> Like</button> <span>
+        - ❤️{{number_of_likes}} like
+        (s)</span>
+    </form>
+  </div>
   <div class="comments">
     <h3>Comments</h3>
 
@@ -52,18 +56,16 @@
 
     {% if not story.comments.all %}
     No comments yet.
-    <a href="{% url 'add_comment' slug=story.slug %}">Add one! </a>
+    <a class="add-one" href="{% url 'add_comment' slug=story.slug %}">Add one! </a>
     {% else %}
     <a href="{% url 'add_comment' slug=story.slug %}">Add comment</a> <br>
     {% for comment in story.comments.all %}
     <hr />
-    <div>{{comment.author}}</div>
-    <div>{{comment.content}}</div>
+    <div class="comment-author">{{comment.author}}</div>
     <small>{{comment.created_on}}</small>
-    <br>
-    <br>
-    <a href="{% url 'edit_comment' story.slug%}">Edit</a>
-    <a href="{% url 'delete_comment' story.slug%}">Delete</a>
+    <div class="comment-content">{{comment.content}}</div>
+    <div class="comment-links"><a href="{% url 'edit_comment' story.slug%}">Edit</a> /
+      <a href="{% url 'delete_comment' story.slug%}">Delete</a></div>
     <hr />
     {% endfor %}
 
@@ -75,4 +77,17 @@
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
 </section>
+
+
+<script>
+  // select the button and the div
+  const likeButton = document.getElementById('like-button');
+
+  function changeButton() {
+    likeButton.innerHTML = 'Liked ❤️';
+  }
+
+  likeButton.addEventListener('click', changeButton);
+</script>
+
 {%endblock%}

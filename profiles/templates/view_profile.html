@@ -13,7 +13,7 @@
       <p>Name: {{writer.name}}</p>
       <p>{{writer.goal}}</p>
       <p>Email: {{writer.email}}</p>
-      <p>About me: {{writer.about_me}}</p>
+      <p>About me: {{writer.about_me|safe}}</p>
       <p>
         {%if writer.facebook_link %}
         <p>Facebook:
