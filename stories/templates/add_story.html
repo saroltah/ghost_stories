@@ -5,7 +5,7 @@
 {%block content%}
 <section class="add-edit-delete-story">
   {% if user.is_authenticated %}
-  {%if user.writer.goal == "WRITER" %}
+  {%if user.writer.goal == "Writer" %}
   <h1>Write your story</h1>
 
   <form method="POST">
