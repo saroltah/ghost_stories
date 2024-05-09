@@ -107,6 +107,22 @@
   text-align: justify
 }
 
+#story-list .edit {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: var(--light-grey-color)
+}
+
+#story-list .edit a {
+  color: var(--red-color);
+  text-decoration: none;
+
+}
+
+#story-list .edit a:hover {
+  color: white
+}
+
 /* one story*/
 
 #one-story h1 {
