@@ -7,7 +7,7 @@
 {% if user.username == writer.username %}
 <section class="view-edit-profile edit-profile">
   <h1>Edit your profile</h1>
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Update</button>
