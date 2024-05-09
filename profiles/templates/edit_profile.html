@@ -5,14 +5,14 @@
 {%block content%}
 {%if user.is_authenticated%}
 {% if user.username == writer.username %}
-<div class="add_story">
+<section class="view-edit-profile edit-profile">
   <h1>Edit your profile</h1>
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Update</button>
   </form>
-</div>
+</section>
 {%else%}
 <h3 class="no-access-message">you have no access here</h3>
 {% endif %}
