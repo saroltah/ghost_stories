@@ -15,7 +15,6 @@ class Story(models.Model):
   story_text = models.TextField(default='')
   teaser = models.TextField(max_length=500)
   keywords	= models.CharField(max_length=100, default='')	
-  image	= models.ImageField(blank=True, upload_to=None, height_field=None, width_field=None)	
   created_on	= models.DateTimeField(auto_now_add=True)
   edited = models.DateTimeField	(auto_now=True)
   likes = models.ManyToManyField(User, related_name="liked_stories")

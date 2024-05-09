@@ -19,8 +19,8 @@
 
   {% if user.username == story.author.username %}
 
-  <div class="edit"><a href="{% url 'edit_story' story.slug%}" class="edit"> Edit </a> or <a
-      href="{% url 'delete_story' story.slug%}" class="edit"> Delete </a></div>
+  <div class="edit"><a href="{% url 'edit_story' story.slug%}"> Edit </a> or <a
+      href="{% url 'delete_story' story.slug%}"> Delete </a></div>
 
 
   {%endif%}

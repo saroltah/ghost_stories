@@ -32,6 +32,14 @@ body {
   font-family: var(--basic-font);
 }
 
+.no-access-message {
+  font-family: var(--written-font);
+  margin: 40px;
+  color: var(--red-color);
+  text-align: center;
+}
+
+/*back button*/
 .back-button {
   padding: 10px;
   box-shadow: var(--red-box-shadow);
@@ -49,6 +57,7 @@ body {
   color: white;
   text-shadow: var(--white-text-shadow);
   box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
 }
 
 .back-button a {
@@ -58,13 +67,6 @@ body {
 
 .back-button a:hover {
   color: white
-}
-
-.no-access-message {
-  font-family: var(--written-font);
-  margin: 40px;
-  color: var(--red-color);
-  text-align: center;
 }
 
 /* Navigation */
@@ -148,7 +150,8 @@ footer {
 
 /*authentication*/
 
-#auth {
+.auth,
+.log-out-section-div {
   margin: 40px auto;
   text-align: center;
   border: 1px solid white;
@@ -156,36 +159,43 @@ footer {
   width: 95%;
 }
 
-#auth ul {
+.log-out-section-div .auth {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%
+}
+
+.auth ul {
   list-style-type: none;
   font-size: 12px
 }
 
-#auth input {
+.auth input {
   display: block;
   text-align: center;
   margin: 10px auto;
   border: 2px solid var(--red-color);
 }
 
-#auth h1 {
+.auth h1 {
   font-family: var(--written-font);
   text-shadow: var(--white-text-shadow);
   font-size: 40px;
   margin-bottom: 30px
 }
 
-#auth a {
+.auth a {
   text-decoration: none;
   color: var(--red-color);
 }
 
-#auth a:hover {
+.auth a:hover {
   color: white;
   text-shadow: var(--red-text-shadow)
 }
 
-#auth button,
+.auth button,
 .reset-password-link {
   padding: 20px;
   box-shadow: var(--red-box-shadow);
@@ -196,13 +206,13 @@ footer {
   font-size: 20px
 }
 
-#auth button:hover,
+.auth button:hover,
 .reset-password-link:hover {
   color: white;
   background-color: var(--red-color);
 }
 
-#auth label {
+.auth label {
   font-family: var(--written-font);
   text-shadow: var(--white-text-shadow);
 }
@@ -214,7 +224,9 @@ footer {
   box-shadow: var(--basic-box-shadow);
   text-align: center;
   margin: 0 auto;
+  font-size: 20px
 }
+
 
 /*media*/
 @media (min-width:481px) {

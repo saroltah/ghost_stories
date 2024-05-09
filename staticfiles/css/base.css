@@ -148,7 +148,7 @@ footer {
 
 /*authentication*/
 
-#auth {
+.auth {
   margin: 40px auto;
   text-align: center;
   border: 1px solid white;
@@ -156,36 +156,36 @@ footer {
   width: 95%;
 }
 
-#auth ul {
+.auth ul {
   list-style-type: none;
   font-size: 12px
 }
 
-#auth input {
+.auth input {
   display: block;
   text-align: center;
   margin: 10px auto;
   border: 2px solid var(--red-color);
 }
 
-#auth h1 {
+.auth h1 {
   font-family: var(--written-font);
   text-shadow: var(--white-text-shadow);
   font-size: 40px;
   margin-bottom: 30px
 }
 
-#auth a {
+a {
   text-decoration: none;
   color: var(--red-color);
 }
 
-#auth a:hover {
+.auth a:hover {
   color: white;
   text-shadow: var(--red-text-shadow)
 }
 
-#auth button,
+.auth button,
 .reset-password-link {
   padding: 20px;
   box-shadow: var(--red-box-shadow);
@@ -196,13 +196,13 @@ footer {
   font-size: 20px
 }
 
-#auth button:hover,
+.auth button:hover,
 .reset-password-link:hover {
   color: white;
   background-color: var(--red-color);
 }
 
-#auth label {
+.auth label {
   font-family: var(--written-font);
   text-shadow: var(--white-text-shadow);
 }
