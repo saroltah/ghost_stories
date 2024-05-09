@@ -66,7 +66,7 @@ class DeleteStory(generic.DeleteView):
 
 def filter_stories(request):
     if request.method== "POST":
-        searched_keyword = request.POST['searched_keyword']
+        searched_keyword = request.POST['searched_keyword'].lower()
         matching_keywords = Story.objects.filter(keywords__contains=searched_keyword)
         return render(request, 'filter_stories.html', {
             'searched_keyword':searched_keyword,

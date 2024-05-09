@@ -10,6 +10,7 @@ class StoryForm(forms.ModelForm):
     widgets = {
       'author': forms.HiddenInput,
       'story_text': SummernoteWidget(),
+      'keywords': forms.TextInput(attrs={'placeholder': 'keyword1, keyword2, keyword3','style': 'text-transform:lowercase;'}),
     }
 
 class CommentForm(forms.ModelForm):
