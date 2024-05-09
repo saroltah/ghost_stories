@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 {% url 'edit_profile' as edit_profile %}
+{% load static %}
 
 {%block content%}
 <section class="view-edit-profile">
@@ -14,7 +15,15 @@
   {%if user.writer.vis == "Visible" %}
   <div class="grid-container">
     <div>
-      <img class="img-fluid profile-image" src="{{writer.photo.url}}" alt="profile image" width="400"></div>
+      {% if "placeholder" in writer.photo.url %}
+      <img class="img-fluid profile-image" src="{% static 'static/image/example.jpg' %}" alt="placeholder image"
+        width="400">
+      {% else %}
+      <img class="img-fluid profile-image" src=" {{ writer.photo.url }}" alt="profile image" width="400">
+      {% endif %}
+    </div>
+    <!--   <div>
+      <img class="img-fluid profile-image" src="{{writer.photo.url}}" alt="profile image" width="400"></div>-->
     <div>
 
       <p><span>Name:</span> {{writer.name}}</p>

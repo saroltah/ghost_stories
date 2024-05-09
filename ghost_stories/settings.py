@@ -31,7 +31,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
@@ -45,14 +45,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'django_summernote',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'home',
     'stories',
     'profiles.apps.ProfilesConfig',
+  
 ]
 
 SITE_ID = 1
@@ -107,7 +110,11 @@ else:
         'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
     }
 
-
+CLOUDINARY_STORAGE = {
+    'cloud_name': os.getenv('CLOUD_NAME'),
+    'api_key': os.getenv('CLOUD_APY_KEY'),
+    'api_secret': os.getenv('CLOUD_API_SECRET')
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -163,3 +170,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+

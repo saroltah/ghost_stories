@@ -4,6 +4,7 @@ from django.urls import reverse
 from autoslug import AutoSlugField
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Writer(models.Model):
@@ -27,7 +28,7 @@ class Writer(models.Model):
                   default="Visible")
   email	= models.EmailField(max_length=100)
   phone =	models.CharField(blank=True)
-  photo	= models.ImageField(blank=True, default='example.jpg')
+  photo	= CloudinaryField('image', default='placeholder')
   about_me = models.TextField(blank=True)
   facebook_link = models.CharField(blank=True, max_length=100)
   instagram_link = models.CharField(blank=True, max_length=100)

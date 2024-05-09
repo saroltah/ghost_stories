@@ -7,11 +7,12 @@
 {% if user.username == writer.username %}
 <section class="view-edit-profile edit-profile">
   <h1>Edit your profile</h1>
+  <small>* Email address and phone number can only be seen by the EDITORS!</small>
+  <br>
+  <small>* Image-size can be max 10MB !</small>
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-
-    <small>* Email address and phone number can only be seen by the EDITORS!</small>
     <button type="submit">Update</button>
   </form>
 </section>
