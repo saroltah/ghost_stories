@@ -114,8 +114,11 @@ CLOUDINARY_STORAGE = {
     'cloud_name': os.getenv('CLOUD_NAME'),
     'api_key': os.getenv('CLOUD_APY_KEY'),
     'api_secret': os.getenv('CLOUD_API_SECRET'),
-    'CLOUDINARY_URL':os.getenv('CLOUDINARY_URL')
 }
+
+os.environ.setdefault(
+    "CLOUDINARY_URL", "os.getenv(CLOUDINARY_URL)")
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
