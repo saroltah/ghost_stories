@@ -8,4 +8,3 @@ from django.utils.text import slugify
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Writer.objects.create(user=instance, username=instance.username),
-        Writer.objects.create(user=instance, email=instance.email)

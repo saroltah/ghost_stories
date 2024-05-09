@@ -11,10 +11,12 @@
   <div class="edit"><a href="{% url 'edit_profile' writer.slug %}" class="edit"> Edit </a>
   </div>
   {% endif %}
+  {%if user.writer.vis == "Visible" %}
   <div class="grid-container">
     <div>
       <img class="img-fluid profile-image" src="{{writer.photo.url}}" alt="profile image" width="400"></div>
     <div>
+
       <p><span>Name:</span> {{writer.name}}</p>
       <p>{{writer.goal}}</p>
       {%if user.writer.goal == "Editor" %}
@@ -37,8 +39,10 @@
         <p><span>Linkedin:</span>
           <a href="{{writer.linkedin_link}}" target="_blank"> <i class="fa-brands fa-linkedin"></i></a></p>
         {%endif%}
-
       </p>
+      {%else%}
+      <h3>This user has hidden profile</h3>
+      {%endif%}
       <button class="back-button"><a onClick="javascript:history.go(-1)"> Back </a></button>
     </div>
 

@@ -18,6 +18,13 @@ class Writer(models.Model):
   goal = models.CharField(max_length=9,
                   choices=GOAL_CHOICES,
                   default="Writer")
+  VIS_CHOICES = (
+    ("Visible", "Visible"),
+    ("Hidden", "Hidden"),
+   )
+  vis = models.CharField(max_length=9,
+                  choices=VIS_CHOICES,
+                  default="Visible")
   email	= models.EmailField(max_length=100)
   phone =	models.CharField(blank=True)
   photo	= models.ImageField(blank=True, default='example.jpg')
