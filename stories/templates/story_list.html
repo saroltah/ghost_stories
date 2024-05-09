@@ -10,9 +10,11 @@
   {% if user.is_authenticated %}
   <div class="flexbox">
     <div class="column-left">
+      {%if user.writer.goal == "Writer" %}
       <div class="add-new-story">
         <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
       </div>
+      {%endif%}
     </div>
     <!-- Filter-->
     <div class="column-right">
@@ -27,7 +29,7 @@
   <!-- Story list-->
   {%for story in story_list%}
   <div class="one-story">
-    <h2>{{story.title}} </h2>
+    <h2>{{story.title}}</h2>
     <p class="author"> by <a href=" {% url 'view_profile' story.author.slug %}"> {{story.author}}</a></p>
     {% if user.username == story.author.username %}
     <div class="edit"><a href="{% url 'edit_story' story.slug%}"> Edit </a> or <a

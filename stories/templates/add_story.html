@@ -5,6 +5,7 @@
 {%block content%}
 <section class="add-edit-delete-story">
   {% if user.is_authenticated %}
+  {%if user.writer.goal == "WRITER" %}
   <h1>Write your story</h1>
 
   <form method="POST">
@@ -17,6 +18,9 @@
     var automaticusername = document.getElementById("id_author")
     automaticusername.value = authorusername
   </script>
+  {%else%}
+  <h3>Only writers can share story</h3>
+  {%endif%}
   {%else%}
   <h3 class="no-access-message"> To add stories, please log in</h3>
   {%endif%}

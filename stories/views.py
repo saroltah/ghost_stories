@@ -20,8 +20,8 @@ class OneStory(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['comments'] = Comment.objects.filter(commented_story=self.object)
-        
+        context['comments'] = Comment.objects.filter(commented_story=self.object)  
+
         one_story_slug = self.kwargs.get('slug')
         likes = get_object_or_404(Story, slug=one_story_slug)
         number_of_likes = likes.number_of_likes()
@@ -44,7 +44,6 @@ class AddStory(generic.CreateView):
     def form_valid(self, form):
         messages.success(self.request, 'Your story is posted!')
         return super().form_valid(form)
-    
 
 class EditStory(generic.UpdateView):
     model = Story
@@ -88,27 +87,10 @@ class AddComment(generic.CreateView):
         
    def get_object(self, queryset=None):
         story_slug = self.kwargs.get('slug')
+        story_title = Story.objects.filter(title)
         comment_id = self.kwargs.get('comment_id', None)
         if comment_id:
             comment = get_object_or_404(Comment, id=comment_id, commented_story__slug=story_slug)
         else:
             comment = get_object_or_404(Comment, commented_story__slug=story_slug)
 
-
-class EditComment(generic.UpdateView):
-    model = Comment
-    template_name = "edit_comment.html"
-    fields = ['content']
-
-    def get_object(self, queryset=None):
-        story_slug = self.kwargs.get('slug')
-        comment_id = self.kwargs.get('comment_id', None)
-        if comment_id:
-            comment = get_object_or_404(Comment, id=comment_id, commented_story__slug=story_slug)
-        else:
-            comment = get_object_or_404(Comment, commented_story__slug=story_slug)
-
-class DeleteComment(generic.DeleteView):
-    model = Comment
-    template_name = "delete_story.html"
-    success_url = reverse_lazy ('one_story') 

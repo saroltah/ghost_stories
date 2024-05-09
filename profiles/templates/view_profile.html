@@ -17,7 +17,10 @@
     <div>
       <p><span>Name:</span> {{writer.name}}</p>
       <p>{{writer.goal}}</p>
+      {%if user.writer.goal == "Editor" %}
       <p><span>Email:</span> {{writer.email}}</p>
+      <p><span>Phone number:</span> {{writer.phone}}</p>
+      {%endif%}
       <p><span>About me:</span> {{writer.about_me|safe}}</p>
       <p>
         {%if writer.facebook_link %}

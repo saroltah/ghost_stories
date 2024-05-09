@@ -10,6 +10,8 @@
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
+
+    <small>* Email address and phone number can only be seen by the EDITORS!</small>
     <button type="submit">Update</button>
   </form>
 </section>

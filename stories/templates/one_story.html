@@ -61,11 +61,10 @@
     <a href="{% url 'add_comment' slug=story.slug %}">Add comment</a> <br>
     {% for comment in story.comments.all %}
     <hr />
-    <div class="comment-author">{{comment.author}}</div>
+    <div class="comment-author">{{comment.author}} - {{user.writer.goal}}</div>
     <small>{{comment.created_on}}</small>
     <div class="comment-content">{{comment.content}}</div>
-    <div class="comment-links"><a href="{% url 'edit_comment' story.slug%}">Edit</a> /
-      <a href="{% url 'delete_comment' story.slug%}">Delete</a></div>
+
     <hr />
     {% endfor %}
 
