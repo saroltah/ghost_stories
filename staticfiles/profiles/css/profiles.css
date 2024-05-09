@@ -1,24 +1,85 @@
 /*writer*/
-#writer {
-  margin: 40px
-}
-
-#writer h1 {
-  color: red;
+.view-edit-profile {
+  display: block;
+  margin: 30px auto;
+  width: 90%;
   text-align: center;
+  font-family: var(--written-font);
 }
 
-#writer .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.view-edit-profile .grid-container {
+  margin: 0px auto;
+  text-align: center
 }
 
-#writer p {
+.view-edit-profile p {
   text-align: justify;
   margin: 40px
 }
 
-.profile-image {
+.view-edit-profile p span {
+  color: var(--light-grey-color)
+}
+
+.view-edit-profile .profile-image {
+  box-shadow: var(--basic-box-shadow);
+  margin-top: 30px
+}
+
+.view-edit-profile a {
+  color: var(--red-color);
+  text-decoration: none;
+}
+
+.view-edit-profile a:hover {
+  color: white;
+}
+
+.view-edit-profile .edit {
+  margin-bottom: 30px
+}
+
+/*edit profile*/
+.view-edit-profile label {
+  color: var(--light-grey-color)
+}
+
+.view-edit-profile input {
+  border: 2px solid var(--light-grey-color);
+}
+
+.view-edit-profile button {
+  padding: 10px 20px;
+  box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
+  font-family: var(--written-font);
   display: block;
-  max-width: 800px;
+  margin: 50px auto;
+  font-size: 15px;
+  color: white
+}
+
+.view-edit-profile form {
+  margin: 0px;
+  padding: 0px
+}
+
+
+/*media*/
+@media(min-width:687px) {
+  .view-edit-profile .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edit-profile p {
+    text-align: center;
+  }
+}
+
+@media(max-width:687px) {
+  #id_about_me_iframe {
+    width: 100% !important;
+    background-color: transparent
+  }
 }

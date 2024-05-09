@@ -1,14 +1,11 @@
 /*stories, one_story*/
+
 #story-list,
-#one-story {
+#one-story,
+#filter-story {
   margin: 30px auto;
   width: 90%;
   text-align: center
-}
-
-#one-story h1 {
-  margin: 30px;
-  font-family: var(--written-font);
 }
 
 #story-list h2 {
@@ -19,7 +16,7 @@
 }
 
 #story-list .author a,
-#one_story .author a {
+#one-story .author a {
   font-family: var(--light-written-font);
   margin-bottom: 40px;
   font-size: 30px;
@@ -30,7 +27,7 @@
 }
 
 #story-list .author a:hover,
-#one_story .author a:hover {
+#one-story .author a:hover {
   color: white
 }
 
@@ -57,8 +54,9 @@
   color: white
 }
 
-.add-new-story button a:hover {
-  color: white
+.add-new-story button a:hover,
+#story-list form button:hover {
+  color: var(--red-color)
 }
 
 #story-list form {
@@ -100,77 +98,189 @@
   font-size: 20px
 }
 
+.read-more:hover {
+  border: 1px solid white;
+  color: var(--red-color)
+}
+
 #story-list .teaser {
   text-align: justify
 }
 
 /* one story*/
 
-#one_story p {
-  margin: 30px;
-  text-align: justify;
+#one-story h1 {
+  margin: 50px 0px 30px 0px;
+  font-family: var(--written-font);
 }
 
-#one_story .date {
+
+#one-story .date {
   text-align: right;
 }
 
-
-#one_story button {
-  display: block;
-  text-align: center;
-  background-color: black;
-  border: 1px solid red;
-  margin: 40px auto
+#one-story .edit {
+  color: var(--light-grey-color)
 }
 
-#one_story button a {
-  text-align: center;
+#one-story .edit a {
+  color: var(--red-color);
   text-decoration: none;
-  color: red
+}
+
+#one-story .likes form {
+  font-family: var(--written-font);
+  text-align: left;
+  margin-top: 40px;
+  height: 50px
+}
+
+#one-story .likes button {
+  padding: 10px 20px;
+  background: transparent;
+  font-family: var(--written-font);
+  margin-bottom: 90px;
+  font-size: 15px;
+  border: 1px solid var(--red-color);
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+  box-shadow: var(--red-box-shadow);
+}
+
+#one-story .likes button:hover {
+  border: 1px solid white;
+  color: var(--red-color);
+}
+
+#one-story .comments {
+  text-align: left;
+  margin-top: 15px
+}
+
+#one-story .comments a {
+  text-decoration: none;
+  color: var(--red-color);
+  font-family: var(--written-font);
+}
+
+.comment-author {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.comments h3 {
+  font-family: var(--written-font);
+}
+
+#one-story .comments .comment-content {
+  margin: 30px 0px;
+  font-size: 20px;
+}
+
+.comment-links {
+  color: var(--red-color)
+}
+
+.comments .add-one {
+  margin-left: 10px;
+}
+
+#one-story a:hover {
+  color: white
 }
 
 /*add story*/
-.add_story {
-  margin: 40px
+.add-edit-delete-story {
+  margin: 50px auto;
+  width: 90%
 }
 
-.add_story h1 {
-  font-size: 40px;
+#id_story_text_iframe {
+  max-width: 100% !important;
+  background: transparent;
+}
+
+.note-toolbar {
+  background-color: black !important;
+}
+
+.add-edit-delete-story h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 30px;
+  font-family: var(--written-font);
 }
 
-.add_story form {
+.add-edit-delete-story form {
   width: 95%;
-  margin: 0px auto
+  margin: 0px auto;
+  font-family: var(--written-font)
 }
 
-.add_story textarea,
-.add_story input {
+.add-edit-delete-story textarea,
+.add-edit-delete-story input {
+  display: block;
+  margin: 10px auto;
+  border: 2px solid var(--light-grey-color);
   width: 100%
 }
 
-.add_story label {
-  color: red;
-  margin: 20px 0px;
-  font-size: 30px;
-}
-
-.add_story button {
-  background-color: black;
+.add-edit-delete-story label {
   color: white;
-  border: 1px solid red;
-  padding: 30px;
-  border-radius: 30%;
-  display: block;
-  margin: 30px auto;
-  font-size: 30px
+  margin: 20px 0px;
+  font-size: 25px;
+  text-shadow: var(--white-text-shadow);
 }
 
-.add_story button:hover {
-  background-color: red;
-  border: 1px solid white;
+.add-edit-delete-story button {
+  padding: 10px 20px;
+  box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
+  font-family: var(--written-font);
+  display: block;
+  margin: 50px auto;
+  font-size: 15px;
+  color: white
+}
+
+.add-edit-delete-story button:hover {
+  color: var(--red)
+}
+
+.add-edit-delete-story back-button {
+  box-shadow: none
+}
+
+/*filter story*/
+
+#filter-story h1 {
+  font-family: var(--written-font);
+}
+
+#filter-story h1 div,
+#filter-story li a span {
+  font-family: var(--light-written-font);
+  color: var(--light-grey-color)
+}
+
+#filter-story ul {
+  margin: 20px
+}
+
+#filter-story li {
+  margin: 30px 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+#filter-story li a {
+  text-decoration: none;
+  color: var(--red-color);
+  font-size: 20px
+}
+
+#filter-story button {
+  font-size: 20px
 }
 
 /* media */
@@ -200,5 +310,29 @@
   #story-list form button,
   #story-list form ::placeholder {
     font-size: 20px
+  }
+
+  .comments h3 {
+    font-size: 30px
+  }
+
+  #one-story .comments a {
+    font-size: 25px
+  }
+
+  .comment-links a {
+    font-size: 18px
+  }
+
+  .comments .add-one {
+    font-size: 20px;
+  }
+
+  .add-edit-delete-story form {
+    width: 60%;
+  }
+
+  .add-edit-delete-story button {
+    font-size: 25px
   }
 }

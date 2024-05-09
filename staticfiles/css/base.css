@@ -185,7 +185,8 @@ footer {
   text-shadow: var(--red-text-shadow)
 }
 
-#auth button {
+#auth button,
+.reset-password-link {
   padding: 20px;
   box-shadow: var(--red-box-shadow);
   color: var(--red-color);
@@ -195,8 +196,8 @@ footer {
   font-size: 20px
 }
 
-
-#auth button:hover {
+#auth button:hover,
+.reset-password-link:hover {
   color: white;
   background-color: var(--red-color);
 }
