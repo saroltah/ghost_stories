@@ -1,0 +1,265 @@
+/*general*/
+
+:root {
+  --grey-gradient: linear-gradient(1deg, rgba(0, 0, 0) 20%, rgb(22, 22, 22) 80%);
+  --dark-grey-color: #534f4d;
+  --light-grey-color: #9a9997;
+  --red-color: #a6071a;
+  --written-font: "Julee",
+    cursive;
+  --thick-written-font: "Permanent Marker",
+    cursive;
+  --light-written-font: "Allura",
+    cursive;
+  --basic-font: "Karla",
+    sans-serif;
+  --white-text-shadow: 10px 12px 34px rgba(255, 255, 255, 0.9);
+  --red-text-shadow: 0px 0px 31px rgba(166, 7, 26, 1);
+  --basic-box-shadow: 2px 12px 50px 1px rgba(255, 255, 255, 0.8);
+  --red-box-shadow: 9px 16px 51px 13px rgba(166, 7, 26, 1)
+}
+
+
+body {
+  background: var(--grey-gradient);
+  color: white;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0px 0px 150px 0px;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  font-family: var(--basic-font);
+}
+
+.no-access-message {
+  font-family: var(--written-font);
+  margin: 40px;
+  color: var(--red-color);
+  text-align: center;
+}
+
+/*back button*/
+.back-button {
+  padding: 10px;
+  box-shadow: var(--red-box-shadow);
+  color: var(--red-color);
+  background-color: transparent;
+  text-shadow: var(--red-text-shadow);
+  font-family: var(--written-font);
+  display: block;
+  margin: 50px auto;
+  font-size: 25px;
+  text-align: center
+}
+
+.back-button:hover {
+  color: white;
+  text-shadow: var(--white-text-shadow);
+  box-shadow: var(--basic-box-shadow);
+  background-color: transparent;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: var(--red-color)
+}
+
+.back-button a:hover {
+  color: white
+}
+
+/* Navigation */
+.navbar {
+  background: var(--grey-gradient);
+  padding: 0px 30px;
+  border: 1px solid white;
+  border-bottom: none;
+  box-shadow: var(--basic-box-shadow);
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.bg-body-tertiary {
+  background-color: black !important;
+}
+
+.navbar li {
+  padding: 20px 30px;
+}
+
+.navbar-brand,
+.navbar-toggler {
+  color: var(--red-color);
+  font-family: var(--thick-written-font);
+  font-size: 22px
+}
+
+.nav-link {
+  color: white;
+  font-family: var(--written-font);
+  font-size: 20px
+}
+
+.navbar-brand:hover,
+.navbar-toggler:hover,
+.nav-link:hover {
+  color: var(--red-color);
+}
+
+
+/*footer*/
+
+footer {
+  padding: 30px;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: var(--red-color);
+  font-family: var(--written-font)
+}
+
+
+.container a {
+  text-decoration: none;
+  color: white;
+  font-family: var(--light-written-font)
+}
+
+.container a:hover {
+  color: var(--red-color)
+}
+
+.copy {
+  text-align: right;
+}
+
+/*authentication*/
+
+.auth,
+.log-out-section-div {
+  margin: 40px auto;
+  text-align: center;
+  border: 1px solid white;
+  padding: 40px;
+  width: 95%;
+}
+
+.log-out-section-div .auth {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%
+}
+
+.auth ul {
+  list-style-type: none;
+  font-size: 12px
+}
+
+.auth input {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  border: 2px solid var(--red-color);
+}
+
+.auth h1 {
+  font-family: var(--written-font);
+  text-shadow: var(--white-text-shadow);
+  font-size: 40px;
+  margin-bottom: 30px
+}
+
+.auth a {
+  text-decoration: none;
+  color: var(--red-color);
+}
+
+.auth a:hover {
+  color: white;
+  text-shadow: var(--red-text-shadow)
+}
+
+.auth button,
+.reset-password-link {
+  padding: 20px;
+  box-shadow: var(--red-box-shadow);
+  color: var(--red-color);
+  text-shadow: var(--red-text-shadow);
+  font-family: var(--written-font);
+  margin-top: 30px;
+  font-size: 20px
+}
+
+.auth button:hover,
+.reset-password-link:hover {
+  color: white;
+  background-color: var(--red-color);
+}
+
+.auth label {
+  font-family: var(--written-font);
+  text-shadow: var(--white-text-shadow);
+}
+
+/*messages*/
+
+.alert-dismissible {
+  color: white;
+  box-shadow: var(--basic-box-shadow);
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px
+}
+
+
+/*media*/
+@media (min-width:481px) {
+  .container a {
+    font-size: 20px
+  }
+}
+
+@media (min-width:720px) {
+  .container {
+    font-size: 25px
+  }
+
+  .container a {
+    font-size: 30px;
+  }
+
+  .navbar-toggler,
+  .nav-link {
+    font-size: 25px
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .left-side {
+    justify-content: left;
+  }
+
+  .right-side {
+    justify-content: right;
+  }
+}
