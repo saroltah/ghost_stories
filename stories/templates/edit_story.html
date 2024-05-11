@@ -9,7 +9,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button>Update</button>
+    <button Update your story>Update</button>
   </form>
   {%else%}
   <h3>Only the author can edit this post</h3>

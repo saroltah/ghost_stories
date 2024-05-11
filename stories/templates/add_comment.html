@@ -14,7 +14,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button>Comment</button>
+    <button aria-label="Send comment">Comment</button>
   </form>
   <script>
     var commentorname = "{{user.username}}";

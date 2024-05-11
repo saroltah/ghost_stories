@@ -10,7 +10,7 @@
   <form method="POST">
     {% csrf_token %}
     Are you sure you want to delete {{story.title}}?
-    <button>Yes, delete it!</button>
+    <button aria-label="Delete your story">Yes, delete it!</button>
   </form>
   {%else%}
   <h3 class="no-access-message">Only the author can delete this post</h3>

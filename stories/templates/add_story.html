@@ -11,7 +11,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button>Post</button>
+    <button aria-label="Post your story">Post</button>
   </form>
   <script>
     var authorusername = "{{user.username}}";
