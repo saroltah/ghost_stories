@@ -12,7 +12,7 @@
     <div class="column-left">
       {%if user.writer.goal == "Writer" %}
       <div class="add-new-story">
-        <button><a href="{% url 'add_story' %}">+ Add new story!</a></button>
+        <button><a href="{% url 'add_story' %}" aria-label="Add a new story">+ Add new story!</a></button>
       </div>
       {%endif%}
     </div>
@@ -30,13 +30,14 @@
   {%for story in story_list%}
   <div class="one-story">
     <h2>{{story.title}}</h2>
-    <p class="author"> by <a href=" {% url 'view_profile' story.author.slug %}"> {{story.author}}</a></p>
+    <p class="author"> by <a href=" {% url 'view_profile' story.author.slug %}" aria-label="View the author's profile">
+        {{story.author}}</a></p>
     {% if user.username == story.author.username %}
-    <div class="edit"><a href="{% url 'edit_story' story.slug%}"> Edit </a> or <a
-        href="{% url 'delete_story' story.slug%}"> Delete </a></div>
+    <div class="edit"><a href="{% url 'edit_story' story.slug%}" aria-label="Edit your story"> Edit </a> or <a
+        href="{% url 'delete_story' story.slug%}" aria-label="Delete your story"> Delete </a></div>
     {%endif%}
     <p class="teaser">{{story.teaser}}</p>
-    <button class="read-more"> <a href="{% url 'one_story' story.slug %}">Read
+    <button class="read-more"> <a href="{% url 'one_story' story.slug %}" aria-label="Read the whole story">Read
         more</a></button>
 
   </div>
@@ -44,7 +45,8 @@
   {%else%}
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a onClick="javascript:history.go(-1)"> Back </a></button>
+  <button class="back-button"><a onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
+    </a></button>
 </section>
 
 

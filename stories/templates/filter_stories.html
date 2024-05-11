@@ -13,7 +13,8 @@
   <ul>
     <li>
       {%for matching_keyword in matching_keywords%}
-      <a href="{% url 'one_story' matching_keyword.slug %}">{{matching_keyword}}<span> by
+      <a href="{% url 'one_story' matching_keyword.slug %}"
+        aria-label="Open the matching story">{{matching_keyword}}<span> by
           {{matching_keyword.author}}</a></span>
       {%endfor%}
     </li>
@@ -24,7 +25,8 @@
   {%else%}
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a href="{% url 'stories' %}"> Back </a></button>
+  <button class="back-button"><a href="{% url 'stories' %}" aria-label="Go back to the previous page"> Back
+    </a></button>
 </section>
 
 

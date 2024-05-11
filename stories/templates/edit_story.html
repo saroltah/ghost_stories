@@ -17,6 +17,7 @@
   {%else%}
   <h3 class="no-access-message"> To read and edit stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a href="{% url 'one_story' story.slug %}"> Back </a></button>
+  <button class="back-button"><a href="{% url 'one_story' story.slug %}" aria-label="Go back to the previous page"> Back
+    </a></button>
 </div>
 {%endblock%}

@@ -15,12 +15,13 @@
   <h1>{{story.title}}</h1>
   <p class="author">
     by
-    <a href="{% url 'view_profile' story.author.slug %}" class="writer"> {{story.author}}</a></p>
+    <a href="{% url 'view_profile' story.author.slug %}" class="writer" aria-label="Open the author's profile">
+      {{story.author}}</a></p>
 
   {% if user.username == story.author.username %}
 
-  <div class="edit"><a href="{% url 'edit_story' story.slug%}"> Edit </a> or <a
-      href="{% url 'delete_story' story.slug%}"> Delete </a></div>
+  <div class="edit"><a href="{% url 'edit_story' story.slug%}" aria-label="Edit your story"> Edit </a> or <a
+      href="{% url 'delete_story' story.slug%}" aria-label="Delete your story"> Delete </a></div>
 
 
   {%endif%}
@@ -41,9 +42,9 @@
     <h3>Comments</h3>
     {% if not story.comments.all %}
     No comments yet.
-    <a class="add-one" href="{% url 'add_comment' slug=story.slug %}">Add one! </a>
+    <a class="add-one" href="{% url 'add_comment' slug=story.slug %}" aria-label="Add a comment">Add one! </a>
     {% else %}
-    <a href="{% url 'add_comment' slug=story.slug %}">Add comment</a> <br>
+    <a href="{% url 'add_comment' slug=story.slug %}" aria-label="Add a comment">Add comment</a> <br>
     {% for comment in story.comments.all %}
     <hr />
     <div class="comment-author">{{comment.author}} - {{user.writer.goal}}</div>
@@ -56,7 +57,7 @@
     {% endif %}
 
   </div>
-  <button class="back-button"><a href="{% url 'stories' %}"> Back </a></button>
+  <button class="back-button"><a href="{% url 'stories' %}" aria-label="Go to the previous page"> Back </a></button>
   {%else%}
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
