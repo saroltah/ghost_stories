@@ -16,7 +16,7 @@ class StoryForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('author','content', 'commented_story')
+        fields = ('author','content')
 
         widgets = {'author': forms.HiddenInput,
         'content':forms.Textarea}
