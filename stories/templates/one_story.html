@@ -36,24 +36,9 @@
         (s)</span>
     </form>
   </div>
+  <!-- comments -->
   <div class="comments">
     <h3>Comments</h3>
-
-    <!--   <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div>placeholder for comment</div>
-          <form method="POST" action="{% url 'one_story' slug=story.slug%}">
-  {%csrf_token%}
-  <div class=" form-group">
-    {{form}}
-  </div>
-  <button type="submit">Send</button>
-  </form>
-  </div>
-  </div>
-  </div>-->
-
     {% if not story.comments.all %}
     No comments yet.
     <a class="add-one" href="{% url 'add_comment' slug=story.slug %}">Add one! </a>

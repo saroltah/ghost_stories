@@ -33,7 +33,7 @@
 
 .add-new-story button {
   padding: 10px 20px;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   background-color: transparent;
   font-family: var(--written-font);
   display: block;
@@ -45,7 +45,7 @@
 .add-new-story button:hover {
   color: white;
   text-shadow: var(--white-text-shadow);
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
 }
 
 .add-new-story a,
@@ -68,7 +68,7 @@
 
 #story-list form button {
   padding: 10px 20px;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   background-color: transparent;
   font-family: var(--written-font);
   margin: 30px 10px;
@@ -254,7 +254,7 @@
 .add-edit-delete-story button,
 .add-comment button {
   padding: 10px 20px;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   background-color: transparent;
   font-family: var(--written-font);
   display: block;

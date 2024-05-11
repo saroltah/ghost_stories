@@ -15,7 +15,7 @@
     sans-serif;
   --white-text-shadow: 10px 12px 34px rgba(255, 255, 255, 0.9);
   --red-text-shadow: 0px 0px 31px rgba(166, 7, 26, 1);
-  --basic-box-shadow: 2px 12px 50px 1px rgba(255, 255, 255, 0.8);
+  --white-box-shadow: 2px 12px 50px 1px rgba(255, 255, 255, 0.8);
   --red-box-shadow: 9px 16px 51px 13px rgba(166, 7, 26, 1)
 }
 
@@ -48,7 +48,7 @@ body {
 .back-button:hover {
   color: white;
   text-shadow: var(--white-text-shadow);
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
 }
 
 .back-button a {
@@ -73,7 +73,7 @@ body {
   padding: 0px 30px;
   border: 1px solid white;
   border-bottom: none;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
 }
 
 .navbar-collapse {
@@ -211,7 +211,7 @@ a {
 
 .alert-dismissible {
   color: white;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   text-align: center;
   margin: 0 auto;
 }

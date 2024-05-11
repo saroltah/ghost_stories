@@ -22,7 +22,7 @@
 }
 
 .view-edit-profile .profile-image {
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   margin-top: 30px
 }
 
@@ -50,7 +50,7 @@
 
 .view-edit-profile button {
   padding: 10px 20px;
-  box-shadow: var(--basic-box-shadow);
+  box-shadow: var(--white-box-shadow);
   background-color: transparent;
   font-family: var(--written-font);
   display: block;
