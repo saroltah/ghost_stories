@@ -216,6 +216,18 @@ footer {
   text-shadow: var(--white-text-shadow);
 }
 
+.auth .forgot-password-link {
+  padding-top: 20px;
+}
+
+.auth .forgot-password-link a {
+  color: white
+}
+
+.auth .forgot-password-link a:hover {
+  color: red
+}
+
 /*messages*/
 
 .alert-dismissible {
