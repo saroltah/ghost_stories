@@ -8,17 +8,13 @@
   {% if user.is_authenticated %}
   {%if searched_keyword%}
 
-  <h1>Stories with keyword: <div>{{searched_keyword}}</div>
-  </h1>
-  <ul>
-    <li>
-      {%for matching_keyword in matching_keywords%}
-      <a href="{% url 'one_story' matching_keyword.slug %}"
-        aria-label="Open the matching story">{{matching_keyword}}<span> by
-          {{matching_keyword.author}}</a></span>
-      {%endfor%}
-    </li>
-  </ul>
+  <h1>Stories with keyword:</h1>
+  <div class="h1-div">{{searched_keyword}}</div>
+  {%for matching_keyword in matching_keywords%}
+  <a href="{% url 'one_story' matching_keyword.slug %}" aria-label="Open the matching story"
+    class="matched-story-title">{{matching_keyword}}<span> by
+      {{matching_keyword.author}}</span></a>
+  {%endfor%}
   {%else%}
   <h1>Search for something!</h1>
   {%endif%}

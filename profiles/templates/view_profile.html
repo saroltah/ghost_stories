@@ -3,12 +3,11 @@
 {% load static %}
 
 {%block content%}
+
 <section class="view-edit-profile">
   {%if user.is_authenticated%}
-
   <h1>{{writer.username}}</h1>
   {% if user.username == writer.username %}
-
   <div class="edit"><a href="{% url 'edit_profile' writer.slug %}" class="edit" aria-label="Edit your story"> Edit </a>
   </div>
   {% endif %}
@@ -22,9 +21,7 @@
       <img class="img-fluid profile-image" src=" {{ writer.photo.url}}" alt="the user's profile image" width="400">
       {% endif %}
     </div>
-
     <div>
-
       <p><span>Name:</span> {{writer.name}}</p>
       <p>{{writer.goal}}</p>
       {%if user.writer.goal == "Editor" %}
@@ -32,35 +29,31 @@
       <p><span>Phone number:</span> {{writer.phone}}</p>
       {%endif%}
       <p><span>About me:</span> {{writer.about_me|safe}}</p>
-      <p>
-        {%if writer.facebook_link %}
-        <p><span>Facebook:</span>
-          <a href="{{writer.facebook_link}}" target="_blank" aria-label="Open facebook profile in new tab"><i
-              class="fa-brands fa-facebook"></i></a>
-          {%endif%} </p>
-
-        {%if writer.instagram_link%}
-        <p><span>Instagram:</span>
-          <a href="{{writer.instagram_link}}" target="_blank" aria-label="Open instagram profile in new tab"><i
-              class="fa-brands fa-instagram"></i></a>
-          {%endif%} </p>
-
-        {%if writer.linkedin_link%}
-        <p><span>Linkedin:</span>
-          <a href="{{writer.linkedin_link}}" target="_blank" aria-label="Open facebook profile in new tab"> <i
-              class="fa-brands fa-linkedin"></i></a></p>
-        {%endif%}
-      </p>
+      {%if writer.facebook_link %}
+      <p><span>Facebook:</span>
+        <a href="{{writer.facebook_link}}" target="_blank" aria-label="Open facebook profile in new tab"><i
+            class="fa-brands fa-facebook"></i></a>
+        {%endif%}</p>
+      {%if writer.instagram_link%}
+      <p><span>Instagram:</span>
+        <a href="{{writer.instagram_link}}" target="_blank" aria-label="Open instagram profile in new tab"><i
+            class="fa-brands fa-instagram"></i></a>
+        {%endif%} </p>
+      {%if writer.linkedin_link%}
+      <p><span>Linkedin:</span>
+        <a href="{{writer.linkedin_link}}" target="_blank" aria-label="Open facebook profile in new tab"> <i
+            class="fa-brands fa-linkedin"></i></a></p>
+      {%endif%}
       {%else%}
       <h3>This user has hidden profile</h3>
       {%endif%}
-
     </div>
-    {%else%}
-    <h3 class="no-access-message"> To see the profile, please log in</h3>
-    {%endif%}
-
+  </div>
+  {%else%}
+  <h3 class="no-access-message"> To see the profile, please log in</h3>
+  {%endif%}
 </section>
 <a class="btn back-button" onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
 </a>
+
 {% endblock %}

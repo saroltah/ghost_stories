@@ -264,26 +264,22 @@
   font-family: var(--written-font);
 }
 
-#filter-story h1 div,
-#filter-story li a span {
+#filter-story .h1-div {
+  font-size: 35px
+}
+
+#filter-story .h1-div,
+#filter-story a span {
   font-family: var(--light-written-font);
   color: var(--light-grey-color)
 }
 
-#filter-story ul {
-  margin: 20px
-}
-
-#filter-story li {
-  margin: 30px 0px;
-  list-style-type: none;
-  padding: 0px;
-}
-
-#filter-story li a {
+#filter-story a {
   text-decoration: none;
   color: var(--red-color);
-  font-size: 20px
+  font-size: 20px;
+  display: block;
+  margin-top: 10px
 }
 
 #filter-story button {

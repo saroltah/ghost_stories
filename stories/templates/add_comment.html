@@ -3,14 +3,10 @@
 {% block title%}: Add a comment {% endblock %}
 
 {%block content%}
+
 <section class="add-comment">
   {% if user.is_authenticated %}
-  <h1>Comment on {{commented_story.title}} {{one_story.title}} {{story.title}} {{comment.commented_story.title}}
-    {{commented_story.story.title}}
-    {{story.pk}} {{one_story.pk}}{{comment.commented_story.pk}} {{story_slug}} {{ slug }} {{comments.title}}
-    {{ object.Story.title }} {{comments.title}} {{story_title}}</h1>
-  <h2> {{ comment_obj.title }}</p>
-  </h2>
+  <h1> Add comment </h1>
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
@@ -25,6 +21,7 @@
   <h3 class="no-access-message"> To add stories, please log in</h3>
   {%endif%}
   <a class="btn back-button" onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
-  </a></button>
+  </a>
 </section>
+
 {%endblock%}

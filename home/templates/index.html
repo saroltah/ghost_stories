@@ -4,6 +4,7 @@
 {% url 'stories' as stories %}
 
 {%block content%}
+
 <section id="homepage">
   <h1>Ghost stories</h1>
   <h2>Short stories</h2>
@@ -11,11 +12,8 @@
   {% if user.is_authenticated %}
   <div class="homepage_story_link"> Start here: <a href="{% url 'stories' %}"
       aria-label="Go to stories page">Stories</a>
-
   </div>
   {% else %}
-
-
   <div class="flexbox">
     <span><a {% if request.path == signup_url %}active{% endif %}" aria-current="page"
         href="{% url 'account_signup' %}">Register</a></span> or
@@ -23,6 +21,6 @@
         href="{% url 'account_login' %}">Login</a></span>
   </div>
   {% endif %}
-
-  {%endblock%}
 </section>
+
+{%endblock%}

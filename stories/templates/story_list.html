@@ -6,6 +6,7 @@
 {% block title%}: Read all stories {% endblock %}
 
 {%block content%}
+
 <section id="story-list">
   {% if user.is_authenticated %}
   <div class="flexbox">
@@ -17,7 +18,9 @@
       </div>
       {%endif%}
     </div>
+
     <!-- Filter-->
+
     <div class="column-right">
       <form class="d-flex search-story" method="POST" action="{%url 'filter_stories'%}">
         {% csrf_token %}
@@ -27,7 +30,9 @@
       </form>
     </div>
   </div>
+
   <!-- Story list-->
+
   {%for story in story_list%}
   <div class="one-story">
     <h2>{{story.title}}</h2>
@@ -40,7 +45,6 @@
     <p class="teaser">{{story.teaser}}</p>
     <a class=" btn read-more" href="{% url 'one_story' story.slug %}" aria-label="Read the whole story">Read
       more</a>
-
   </div>
   {%endfor%}
   {%else%}

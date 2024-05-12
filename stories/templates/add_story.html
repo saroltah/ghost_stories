@@ -3,11 +3,11 @@
 {% block title%}: Add a story {% endblock %}
 
 {%block content%}
+
 <section class="add-edit-delete-story">
   {% if user.is_authenticated %}
   {%if user.writer.goal == "Writer" %}
   <h1>Write your story</h1>
-
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
@@ -27,4 +27,5 @@
   <a class="btn back-button" href="{% url 'stories' %}" aria-label="Go back to the perivious page"> Back
   </a>
 </section>
+
 {%endblock%}

@@ -7,28 +7,23 @@
 {% url 'delete_comment' as delete_comment %}
 {% url 'view_profile' as view_profile %}
 {% block title%}: {{story.title}} {% endblock %}
+
 {%block content%}
 
 <section id="one-story">
   {% if user.is_authenticated %}
-
   <h1>{{story.title}}</h1>
   <p class="author">
     by
     <a href="{% url 'view_profile' story.author.slug %}" class="writer" aria-label="Open the author's profile">
       {{story.author}}</a></p>
-
   {% if user.username == story.author.username %}
-
   <div class="edit"><a href="{% url 'edit_story' story.slug%}" aria-label="Edit your story"> Edit </a> or <a
       href="{% url 'delete_story' story.slug%}" aria-label="Delete your story"> Delete </a></div>
-
-
   {%endif%}
   <div class="date">
     <small>{{story.edited}}</small></div>
   <p>{{story.story_text|safe}}</p>
-
   <div class="likes">
     <form action="{%url 'like_story' story.slug %} " method="POST">
       {% csrf_token %}
@@ -37,7 +32,9 @@
         (s)</span>
     </form>
   </div>
+
   <!-- comments -->
+
   <div class="comments">
     <h3>Comments</h3>
     {% if not story.comments.all %}
@@ -50,19 +47,15 @@
     <div class="comment-author">{{comment.author}} - {{user.writer.goal}}</div>
     <small>{{comment.created_on}}</small>
     <div class="comment-content">{{comment.content}}</div>
-
     <hr />
     {% endfor %}
-
     {% endif %}
-
   </div>
-  <a class="btn back-button" href="{% url 'stories' %}" aria-label="Go to the previous page"> Back </a></button>
+  <a class="btn back-button" href="{% url 'stories' %}" aria-label="Go to the previous page"> Back </a>
   {%else%}
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
 </section>
-
 
 <script>
   const likeButton = document.getElementById('like-button');
@@ -70,7 +63,6 @@
   function changeButton() {
     likeButton.innerHTML = 'Liked ❤️';
   }
-
   likeButton.addEventListener('click', changeButton);
 </script>
 

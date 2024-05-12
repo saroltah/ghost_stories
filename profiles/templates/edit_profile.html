@@ -4,6 +4,7 @@
 {% url 'account_change_password as change_password' %}
 
 {%block content%}
+
 {%if user.is_authenticated%}
 {% if user.username == writer.username %}
 <section class="view-edit-profile edit-profile">
@@ -26,4 +27,5 @@
 {% endif %}
 <a class="btn back-button" href="{{ user.writer.get_absolute_url }}" aria-label="Go back to the previous page"> Back
 </a>
+
 {%endblock%}
