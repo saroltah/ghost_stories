@@ -83,7 +83,7 @@ class AddComment(generic.CreateView):
         story_slug = self.kwargs.get('slug')
         story = get_object_or_404(Story, slug=story_slug)
         form.instance.commented_story = story
-        # messages.success(self.request, 'Comment added')
+        messages.success(self.request, 'Comment added')
         return super().form_valid(form)
    
    def get_success_url(self):
