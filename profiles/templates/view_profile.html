@@ -54,14 +54,13 @@
       {%else%}
       <h3>This user has hidden profile</h3>
       {%endif%}
-      <button class="back-button"><a onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
-        </a></button>
+
     </div>
-
-
     {%else%}
     <h3 class="no-access-message"> To see the profile, please log in</h3>
     {%endif%}
 
 </section>
+<a class="btn back-button" onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
+</a>
 {% endblock %}

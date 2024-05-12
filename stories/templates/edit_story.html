@@ -9,7 +9,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button Update your story>Update</button>
+    <button Update your story class="basic-button">Update</button>
   </form>
   {%else%}
   <h3>Only the author can edit this post</h3>
@@ -17,7 +17,7 @@
   {%else%}
   <h3 class="no-access-message"> To read and edit stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a href="{% url 'one_story' story.slug %}" aria-label="Go back to the previous page"> Back
-    </a></button>
+  <a class="btn back-button" href="{% url 'one_story' story.slug %}" aria-label="Go back to the previous page"> Back
+  </a></button>
 </div>
 {%endblock%}

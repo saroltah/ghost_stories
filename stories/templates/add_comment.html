@@ -14,7 +14,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button aria-label="Send comment">Comment</button>
+    <button aria-label="Send comment" class="basic button">Comment</button>
   </form>
   <script>
     var commentorname = "{{user.username}}";
@@ -24,7 +24,7 @@
   {%else%}
   <h3 class="no-access-message"> To add stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
-    </a></button>
+  <a class="btn back-button" onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
+  </a></button>
 </section>
 {%endblock%}

@@ -10,13 +10,13 @@
   <form method="POST">
     {% csrf_token %}
     Are you sure you want to delete {{story.title}}?
-    <button aria-label="Delete your story">Yes, delete it!</button>
+    <button aria-label="Delete your story" class="basic-button">Yes, delete it!</button>
   </form>
   {%else%}
   <h3 class="no-access-message">Only the author can delete this post</h3>
   {%endif%}
   {%endif%}
-  <button class="back-button"><a href="{% url 'one_story' story.slug %}" aria-label="Go back to the previous page"> Back
-    </a></button>
+  <a class="btn back-button" href="{% url 'one_story' story.slug %}" aria-label="Go back to the previous page"> Back
+  </a>
 </div>
 {%endblock%}

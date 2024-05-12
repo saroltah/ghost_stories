@@ -11,7 +11,7 @@
   <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button aria-label="Post your story">Post</button>
+    <button aria-label="Post your story" class="basic-button">Post</button>
   </form>
   <script>
     var authorusername = "{{user.username}}";
@@ -24,7 +24,7 @@
   {%else%}
   <h3 class="no-access-message"> To add stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a href="{% url 'stories' %}" aria-label="Go back to the perivious page"> Back
-    </a></button>
+  <a class="btn back-button" href="{% url 'stories' %}" aria-label="Go back to the perivious page"> Back
+  </a>
 </section>
 {%endblock%}

@@ -12,7 +12,8 @@
     <div class="column-left">
       {%if user.writer.goal == "Writer" %}
       <div class="add-new-story">
-        <button><a href="{% url 'add_story' %}" aria-label="Add a new story">+ Add new story!</a></button>
+        <a class="btn add-story-button" href="{% url 'add_story' %}" aria-label="Add a new story">+ Add new
+          story!</a>
       </div>
       {%endif%}
     </div>
@@ -37,16 +38,16 @@
         href="{% url 'delete_story' story.slug%}" aria-label="Delete your story"> Delete </a></div>
     {%endif%}
     <p class="teaser">{{story.teaser}}</p>
-    <button class="read-more"> <a href="{% url 'one_story' story.slug %}" aria-label="Read the whole story">Read
-        more</a></button>
+    <a class=" btn read-more" href="{% url 'one_story' story.slug %}" aria-label="Read the whole story">Read
+      more</a>
 
   </div>
   {%endfor%}
   {%else%}
   <h3 class="no-access-message"> To read stories, please log in</h3>
   {%endif%}
-  <button class="back-button"><a onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
-    </a></button>
+  <a class="btn back-button" onClick="javascript:history.go(-1)" aria-label="Go back to the previous page"> Back
+  </a>
 </section>
 
 

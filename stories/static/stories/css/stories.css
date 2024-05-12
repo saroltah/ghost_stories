@@ -1,4 +1,4 @@
-/*stories, one_story*/
+/*story-list, one_story*/
 
 #story-list,
 #one-story,
@@ -31,30 +31,30 @@
   color: white
 }
 
-.add-new-story button {
+#story-list .add-story-button {
   padding: 10px 20px;
   box-shadow: var(--white-box-shadow);
   background-color: transparent;
   font-family: var(--written-font);
   display: block;
   margin: 30px 10px;
-  font-size: 15px;
+  font-size: 18px;
   text-align: left;
+  color: white;
+  width: 160px;
 }
 
-.add-new-story button:hover {
-  color: white;
+#story-list .add-story-button:hover {
+  color: var(--red-color);
   text-shadow: var(--white-text-shadow);
   box-shadow: var(--white-box-shadow);
 }
 
-.add-new-story a,
-.read-more a {
+#story-list {
   text-decoration: none;
   color: white
 }
 
-.add-new-story button a:hover,
 #story-list form button:hover {
   color: var(--red-color)
 }
@@ -72,7 +72,7 @@
   background-color: transparent;
   font-family: var(--written-font);
   margin: 30px 10px;
-  font-size: 15px;
+  font-size: 18px;
   color: white
 }
 
@@ -86,7 +86,7 @@
   color: var(--red-color)
 }
 
-.read-more {
+#story-list .read-more {
   padding: 10px 20px;
   background: transparent;
   font-family: var(--written-font);
@@ -95,10 +95,12 @@
   margin-bottom: 90px;
   font-size: 15px;
   border: 1px solid var(--red-color);
-  font-size: 20px
+  font-size: 18px;
+  color: white;
+  width: 200px
 }
 
-.read-more:hover {
+#story-list .read-more:hover {
   border: 1px solid white;
   color: var(--red-color)
 }
@@ -129,7 +131,6 @@
   margin: 50px 0px 30px 0px;
   font-family: var(--written-font);
 }
-
 
 #one-story .date {
   text-align: right;
@@ -180,11 +181,11 @@
   font-family: var(--written-font);
 }
 
-.comment-author {
+#one-story .comments .comment-author {
   font-size: 20px;
 }
 
-.comments h3 {
+#one-story .comments h3 {
   font-family: var(--written-font);
 }
 
@@ -193,11 +194,11 @@
   font-size: 20px;
 }
 
-.comment-links {
+#one-story .comment-links {
   color: var(--red-color)
 }
 
-.comments .add-one {
+#one-story .comments .add-one {
   margin-left: 10px;
 }
 
@@ -206,6 +207,7 @@
 }
 
 /*add story*/
+
 .add-edit-delete-story,
 .add-comment {
   margin: 50px auto;
@@ -232,7 +234,8 @@
 .add-comment form {
   width: 95%;
   margin: 0px auto;
-  font-family: var(--written-font)
+  font-family: var(--written-font);
+  text-align: center
 }
 
 .add-edit-delete-story textarea,
@@ -251,24 +254,7 @@
   text-shadow: var(--white-text-shadow);
 }
 
-.add-edit-delete-story button,
-.add-comment button {
-  padding: 10px 20px;
-  box-shadow: var(--white-box-shadow);
-  background-color: transparent;
-  font-family: var(--written-font);
-  display: block;
-  margin: 50px auto;
-  font-size: 15px;
-  color: white
-}
-
-.add-edit-delete-story button:hover,
-.add-comment button:hover {
-  color: var(--red)
-}
-
-.add-edit-delete-story back-button {
+.add-edit-delete-story {
   box-shadow: none
 }
 
@@ -319,21 +305,20 @@
     align-items: center;
   }
 
-  .column-left {
+  #story-list .column-left {
     justify-content: start;
   }
 
-  .column-right {
+  #story-list .column-right {
     justify-content: end;
   }
 
-  .add-new-story button,
-  #story-list form button,
+  #story-list .add-story-button #story-list form button,
   #story-list form ::placeholder {
     font-size: 20px
   }
 
-  .comments h3 {
+  #one-story .comments h3 {
     font-size: 30px
   }
 
@@ -341,11 +326,11 @@
     font-size: 25px
   }
 
-  .comment-links a {
+  #one-story .comment-links a {
     font-size: 18px
   }
 
-  .comments .add-one {
+  #one-story .comments .add-one {
     font-size: 20px;
   }
 

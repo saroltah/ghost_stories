@@ -30,7 +30,9 @@
 </head>
 
 <body>
+
   <!-- Menu -->
+
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -39,42 +41,41 @@
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           Menu
         </button>
-        <div class="collapse navbar-collapse left-side" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}" aria-label="Go to about page">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'terms' %}" aria-label="Read terms and conditions">Terms</a>
             </li>
-
           </ul>
-        </div>
-        <div class="collapse navbar-collapse right-side" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'stories' %}" aria-label="Go to stories page">Stories</a>
-            </li>
-            <li class="nav-item me-auto">
-              <a class="nav-link" href="{{ user.writer.get_absolute_url }}" aria-label="Go to your profile">Profile as
-                {{user.username}}</a>
-            </li>
-            <li class=" nav-item auth-menu-link">
-              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                href="{% url 'account_logout' %}" aria-label="Log out">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item  me-auto">
-              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                href="{% url 'account_signup' %}" aria-label="Register to the website">Register</a>
-            </li>
-            <li class="nav-item auth-menu-link">
-              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                href="{% url 'account_login' %}" aria-label="Log in">Login</a>
-            </li>
-            {% endif %}
-          </ul>
+          <div class="ms-auto">
+            <ul class="navbar-nav">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'stories' %}" aria-label="Go to stories page">Stories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ user.writer.get_absolute_url }}"
+                  aria-label="Go to your profile">Profile</a>
+              </li>
+              <li class=" nav-item auth-menu-link">
+                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                  href="{% url 'account_logout' %}" aria-label="Log out">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item  me-auto">
+                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                  href="{% url 'account_signup' %}" aria-label="Register to the website">Register</a>
+              </li>
+              <li class="nav-item auth-menu-link">
+                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                  href="{% url 'account_login' %}" aria-label="Log in">Login</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -97,11 +98,14 @@
   </div>
 
   <!-- block content-->
-  <section>
+
+  <div>
     {% block content %}
     {% endblock content %}
-  </section>
+  </div>
+
   <!-- Footer -->
+
   <footer>
     <div class="container">
       <div>Contact: <br> <span><a href="mailto:upport@ghoststories.com"
@@ -113,7 +117,9 @@
             Hegyi</a></span> </div>
     </div>
   </footer>
+
   <!-- Script -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>

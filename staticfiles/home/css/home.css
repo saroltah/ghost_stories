@@ -1,3 +1,5 @@
+/*homepage*/
+
 #homepage {
   text-align: center;
   margin-top: 100px;
@@ -40,6 +42,7 @@
 }
 
 /*about and terms*/
+
 .about-and-terms {
   margin: 30px auto;
   width: 90%
@@ -60,6 +63,7 @@
   margin: 20px;
 }
 
+/* media */
 
 @media (min-width: 992px) {
   #homepage {

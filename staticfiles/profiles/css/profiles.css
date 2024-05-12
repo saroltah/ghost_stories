@@ -1,4 +1,5 @@
 /*writer*/
+
 .view-edit-profile {
   display: block;
   margin: 30px auto;
@@ -39,7 +40,6 @@
   margin-bottom: 30px
 }
 
-/*edit profile*/
 .view-edit-profile label {
   color: var(--light-grey-color)
 }
@@ -48,24 +48,13 @@
   border: 2px solid var(--light-grey-color);
 }
 
-.view-edit-profile button {
-  padding: 10px 20px;
-  box-shadow: var(--white-box-shadow);
-  background-color: transparent;
-  font-family: var(--written-font);
-  display: block;
-  margin: 50px auto;
-  font-size: 15px;
-  color: white
-}
-
 .view-edit-profile form {
   margin: 0px;
   padding: 0px
 }
 
-
 /*media*/
+
 @media(min-width:687px) {
   .view-edit-profile .grid-container {
     display: grid;

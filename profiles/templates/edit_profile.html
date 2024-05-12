@@ -12,17 +12,18 @@
   <br>
   <small>* Image-size can be max 10MB !</small>
   <br>
-  <h5><a href="{% url 'account_change_password' %}">Click here, to change your password!</a></h5>
+  <h5><a href="{% url 'account_change_password' %}">Click here, to change your
+      password!</a></h5>
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit">Update</button>
+    <button type="submit" class="basic-button">Update</button>
   </form>
 </section>
 {%else%}
 <h3 class="no-access-message">you have no access here</h3>
 {% endif %}
 {% endif %}
-<button class="back-button"><a href="{{ user.writer.get_absolute_url }}" aria-label="Go back to the previous page"> Back
-  </a></button>
+<a class="btn back-button" href="{{ user.writer.get_absolute_url }}" aria-label="Go back to the previous page"> Back
+</a>
 {%endblock%}
