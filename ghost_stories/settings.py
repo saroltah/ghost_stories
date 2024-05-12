@@ -99,9 +99,13 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUD_API_KEY'),
     'API_SECRET': os.getenv('CLOUD_API_SECRET'),
-    'cloud_name': 'ghoststories'
 }
 
+cloudinary.config({ 
+    cloud_name:  os.getenv('CLOUD_NAME'),
+    api_key: os.getenv('CLOUD_API_KEY'),
+    api_secret: os.getenv('CLOUD_API_SECRET'),
+    });
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
