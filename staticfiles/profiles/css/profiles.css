@@ -55,7 +55,7 @@
 
 /*media*/
 
-@media(min-width:687px) {
+@media(min-width:500px) {
   .view-edit-profile .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

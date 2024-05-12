@@ -40,7 +40,7 @@ class Comment(models.Model):
     author = models.ForeignKey(Writer, on_delete=models.CASCADE)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    ccommented_story = models.ForeignKey(
+    commented_story = models.ForeignKey(
                        Story,
                        on_delete=models.CASCADE,
                        related_name="comments",
