@@ -9,3 +9,6 @@ class About(TemplateView):
 
 class Terms(TemplateView):
     template_name = "terms.html"
+
+def error_404_view(request,exception):
+    return render(request, 'page_not_found.html')

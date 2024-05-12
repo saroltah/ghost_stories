@@ -14,5 +14,7 @@ urlpatterns = [
     path('users/', include('profiles.urls'), name='user-urls'),
 ]
 
+handler404 = 'home.views.error_404_view'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

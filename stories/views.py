@@ -4,7 +4,7 @@ from .models import Story, Comment
 from django.urls import reverse_lazy, reverse
 from .forms import StoryForm, CommentForm
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 
 
@@ -28,6 +28,7 @@ class OneStory(generic.DetailView):
         context['number_of_likes'] = number_of_likes
         
         return context
+
 
 def LikeStory(request, slug):
     story = get_object_or_404(Story, slug=request.POST.get('story_slug'))
