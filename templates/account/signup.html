@@ -1,17 +1,14 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
+
 <section class="auth">
   <h1>{% trans "Sign Up" %}</h1>
-
   <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"
       aria-label="Click here to sign in">sign
       in</a>.{% endblocktrans %}</p>
-
   <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
     {{ form.as_p }}
@@ -21,4 +18,5 @@
     <button type="submit">{% trans "Sign Up" %} &raquo;</button>
   </form>
 </section>
+
 {% endblock content %}
