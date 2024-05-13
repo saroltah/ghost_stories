@@ -131,13 +131,15 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: var(--red-color);
-  font-family: var(--written-font)
+  font-family: var(--written-font);
+  font-size: 18px;
 }
 
 .container a {
   text-decoration: none;
   color: white;
-  font-family: var(--light-written-font)
+  font-family: var(--light-written-font);
+  font-size: 18px;
 }
 
 .container a:hover {
