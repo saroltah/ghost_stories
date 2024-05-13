@@ -11,4 +11,6 @@ class ProfileForm(forms.ModelForm):
         fields = ('name', 'goal', 'email', 'phone', 'photo', 'about_me',
                   'facebook_link', 'instagram_link', 'linkedin_link', 'vis')
         widgets = {
-          'about_me': SummernoteWidget(), }
+          'about_me': SummernoteWidget(),}
+
+
