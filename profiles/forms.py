@@ -8,7 +8,7 @@ from django_summernote.fields import SummernoteTextFormField,\
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Writer
-        fields = ('name', 'goal', 'email', 'phone', 'about_me',
+        fields = ('name', 'goal', 'email', 'phone', 'photo', 'about_me',
                   'facebook_link', 'instagram_link', 'linkedin_link', 'vis')
         widgets = {
           'about_me': SummernoteWidget(), }

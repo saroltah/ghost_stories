@@ -14,8 +14,12 @@
   {%if user.writer.vis == "Visible" %}
   <div class="grid-container">
     <div>
+      {% if "placeholder" in writer.photo.url %}
       <img class="img-fluid profile-image" src="{% static 'image/example.jpg' %}" alt="default profile image"
         width="400">
+      {% else %}
+      <img class="img-fluid profile-image" src=" {{ writer.photo.url}}" alt="the user's profile image" width="400">
+      {% endif %}
     </div>
     <div>
       <p><span>Name:</span> {{writer.name}}</p>
