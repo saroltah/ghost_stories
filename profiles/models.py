@@ -28,7 +28,7 @@ class Writer(models.Model):
                            default="Visible")
     email = models.EmailField(max_length=100)
     phone = models.CharField(blank=True)
-    photo = CloudinaryField('image', default='placeholder')
+    photo = CloudinaryField('image', default='placeholder', blank=True)
     about_me = models.TextField(blank=True)
     facebook_link = models.CharField(blank=True, max_length=100)
     instagram_link = models.CharField(blank=True, max_length=100)

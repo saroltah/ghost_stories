@@ -18,6 +18,13 @@ class StoryForm(forms.ModelForm):
                         }),
         }
 
+    def clean_keywords(self):
+        keywords = self.cleaned_data.get('keywords')
+        if keywords:
+            return keywords.lower()
+        else:
+            return keywords
+
 
 class CommentForm(forms.ModelForm):
     class Meta:
