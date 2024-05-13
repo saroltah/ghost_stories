@@ -840,14 +840,19 @@ in views.py the search field input: ['searched_keyword'].lower()
 
 12. Deployment error: slugify was not recognized.. - I refreshed requirement.txt.
 
-13.  Exception Value: Must supply cloud_name in tag or in configuration. Solution: Add CLOUD_NAME, API_KEY, SECRET_KEY in config vars.
+13.  Exception Value: Must supply cloud_name in a tag or in configuration. Solution: Add CLOUD_NAME, API_KEY, SECRET_KEY in config vars.
+
+But I added these names first, instead of how I saved them in my .env files. It was working for the first refresh, but after it threw a 505 error, “must supply API key”. So I printed out values in my settings.py, for debugging,  I also checked my Cloudinary page, and then when I checked again the config var values compared with .env values,  I realized, the names should be also the same.
+
 
 14. Validation error: the element a must not appear as a descendant of the button element. - So deleted the buttons, and styled the links as buttons.
 
+<br>
 
-**Known bugs**
+**Known bugs:**
 
-1.
+NONE
+
 
 ## Credits and sources
 
