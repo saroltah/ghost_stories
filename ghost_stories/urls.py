@@ -15,6 +15,7 @@ urlpatterns = [
 ]
 
 handler404 = 'home.views.error_404_view'
+handler500 = 'home.views.error_500_view'
 
 if settings.DEBUG:
     urlpatterns += static(

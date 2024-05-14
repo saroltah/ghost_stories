@@ -16,3 +16,6 @@ class Terms(TemplateView):
 
 def error_404_view(request, exception):
     return render(request, 'page_not_found.html')
+
+def error_500_view(request):
+    return render(request, 'wrong_data.html')
