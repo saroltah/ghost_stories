@@ -1,6 +1,7 @@
 # Ghost stories
 
 Live website: https://ghost-stories-072f21228a45.herokuapp.com/
+
 ![Ghost stories front page](</readme/assets/ghost stories front.png>)
 CONTENT:
 - [Goal of the website](#goal-of-the-website)
@@ -58,8 +59,11 @@ Logged out and logged in home page
 
 #### Importnace of the website:
 Amateur writers can show their work to a bigger audience, which improves their creativity, encourages them to practice and improve their writing skills
+
 Users can receive feedback, which helps them improve, as well as provide encouragement and support.
+
 The website creates a community between writers( and readers) who share similar interests.
+
  Editors can find hidden talents, it is a good business. If a writer proves to be talented, they might even receive opportunities in writing-related projects or publishing vents.
 
 #### Design
@@ -80,7 +84,7 @@ Default profile picture:
   - For the logo: **Permanent Marker, cursive**
   - The written font for the heading is beautiful: **Julee, cursive**
   - Light Written font mostly for names and titles, because it looks handwritten:**"Allura", cursive**
-  - Simple font for long texts - more readable: **Karla, sans-serif **
+  - Simple font for long texts - more readable: **Karla, sans-serif**
 - I used mobile-first design, then made it responsive.
 - I made buttons match for consistency with classes. Back-button, basic-button, and auth buttons are the same. This way I also avoid repetition. 
 
@@ -89,7 +93,7 @@ Default profile picture:
 ## Epics and user stories
 
 I used GitHub projects, to write down all the important features I needed in my website, using user stories. I divided my user stories into different categories (I would make them as epics), so it is easier to see my progress or find a story I need. I also labeled them by the MoSCoW prioritization: must-have, should have, could have, won’t have, and put a question mark for those, I need to do research on how to implement. 
-As I started/finished a task, I moved it from the to-do list to the in-progress and then Done list.
+As I started/finished a task, I moved it from the To-do list to the In-progress and then Done list.
 I haven’t accomplished everything I planned, but I closed all issues, and the ones that are not finished, I will move to version 2 of this project. All user stories have acceptance criteria also.
 
 Github project: 
@@ -108,12 +112,19 @@ Naming and prioritizing user stories:
 **Categories:**
 
 Admin: All user stories related to admin activities
-Profile: Everything about the user profile
+
+Profile: Everything about the user profile, pictures
+
 Sign up: Authentication stories
+
 Sign in: Stories about logins, logouts, and passwords.
+
 Stories: Involves stories connected to adding, editing, viewing, etc stories.
-Communication: It involves users getting in contact with each other.
+
+Communication: It involves users getting in contact with each other
+
 Interaction: Users interact through their stories, comments, likes
+
 Menu: Stories related to the menu and navigation
 
 
@@ -494,6 +505,7 @@ _Note: The original plan was to have 2 interfaces with different actions. One fo
 
 -**Create Github project**
 1. Create a new repository
+
 2. In the menu click on project > Link a project > Create new project 
 3. Click on Board, and give a name > Create
 4. Click on the three dots menu, choose workflows
@@ -799,9 +811,57 @@ Desktop:
 
 ![desktop](/readme/assets/nesthub.png)
 
-Lighthouse checks for desktop devices:
-Desktop:
-Mobile:
+**Lighthouse checks:**
+
+It was different in a couple of pages. 
+
+_Desktop:_
+
+Performance: GREEN
+
+Accessibility: GREEN
+
+Best practices: ORANGE-GREEN
+
+SEO: ORANGE
+
+some examples: 
+
+Logout page:
+
+![logout](/readme/assets/logout.png) 
+
+Home:
+
+![start](/readme/assets/start.png) 
+
+One story:
+
+![onestory](</readme/assets/one story light.png>)
+
+_Mobile:_
+
+Performance: ORANGE-GREEN
+
+Accessibility: GREEN
+
+Best practices: ORANGE-GREEN
+
+SEO: ORANGE
+
+some examples:
+
+Stories page: 
+
+![storiest](</readme/assets/m stories.png>) 
+
+Profile:
+
+![profile](</readme/assets/m profile.png>) 
+
+Terms:
+
+![terms](</readme/assets/m terms.png>)
 
 ## Manual testing
 
@@ -816,6 +876,10 @@ What is the expectation and how to test it? | Is it working?
 | On the footer there are two links. left side: contact, email, right side. created by, copy right name.. | Yes.
 | I click on footer email, and it opens a separate tab with my emailing program, filled out that email address as reciever | Yes.
 | I click on my name and it opens my portfolio in separate tab | Yes.
+
+Footer:
+
+![footer](/readme/assets/footer.png)
 
 <br>
 
@@ -847,6 +911,10 @@ What is the expectation and how to test it? | Is it working?
 | I click on Yes, log out button, and it redirects me to the homepage. | Yes
 | I click on the logout page back button and it redirects me to the previous page. | Yes
 
+Sign up email error:
+
+![email](</readme/assets/email error.png>)
+
 <br>
 
 **Profile:** 
@@ -854,7 +922,7 @@ What is the expectation and how to test it? | Is it working?
 What is the expectation and how to test it? | Is it working? 
 | :--- | :--: 
 | I click on the profile, and I see my profile’s view. on a smaller screen photo first, then details, on a bigger screen left side photo, right side details. I also see the edit link. | Yes.
-| I click on the social media icon (Facebook/Instagram/LinkedIn and it opens the page in a new tab | Yes.
+| I click on the social media icon (Facebook/Instagram/LinkedIn) and it opens the page in a new tab | Yes.
 | Only those icons can I see, that I fill out in my profile | Yes.
 | On the view profile page I click on the back button and it brings me back to the previous page | Yes.
 | On the view profile page I click on the edit link, and it redirects me to the edit profile template | Yes.
@@ -877,6 +945,9 @@ What is the expectation and how to test it? | Is it working?
 | I upload big images from my professional camera, and since max size is 10 MB, it redirects to a custom error page,which says the image needs to be smaller than 10mb.| Yes
 | At the image section I click on the clear checkbox and update profile button, and my image changes back to the default picture.  | Yes.
 
+Visible/hidden profile
+
+![visible](/readme/assets/visible.png)
 
 <br>
 
@@ -914,6 +985,17 @@ What is the expectation and how to test it? | Is it working?
 
 *_Note: The keywords section counts as one word, space and coma also part of it. When I look for one word, I search for one part of it. If I look for more words (and don’t type the exact same snippet as in the keywords field) then it can not compare two separate parts of it._
 
+
+Obligatory keywords: 
+
+![keyword](</readme/assets/keywords.png>)
+
+
+Filter story is working:
+
+![filter](/readme/assets/filter.png)
+
+
 <br>
 
 **Last-minute changes**
@@ -922,6 +1004,7 @@ What is the expectation and how to test it? | Is it working?
 | :--- | :--: 
 | I click on the forget password link, and it redirects me to the reset password template. | Yes.
 | I click on send email, and it sends the password to my email. | No. I realized since the email field is not obligatory, there is no connection between the user and the email. So for now I deleted this option.
+
 
 <br>
 
@@ -936,6 +1019,10 @@ What is the expectation and how to test it? | Is it working?
 | I open the stories page, the add story button is on the left, and the search field is on the right. | Yes.
 
 
+dropdown-menu:
+
+![menu](/readme/assets/menu.png)
+
 <br>
 
 **Error handling**
@@ -948,6 +1035,10 @@ What is the expectation and how to test it? | Is it working?
 | I type in a not valid URL, and it redirects me to a custom error page, which says this page does not exist..| Yes.
 | I log in as a writer and modify the URL to add a story. The page says only writers can share stories.| Yes.
 
+Only the authors can edit:
+
+![only author](</readme/assets/only author.png>)
+
 <br>
 
 **Admin:**
@@ -958,6 +1049,10 @@ What is the expectation and how to test it? | Is it working?
 | I can see, edit, and delete comments as I log in to my admin site. | Yes. 
 | I can see, edit, and delete profiles as I log in to my admin site. | Yes. 
 | I can see, edit, and delete users as I log in to my admin site. | Yes. 
+
+Writers(Users) in admin page:
+
+![writers](</readme/assets/writers.png>)
 
 <br>
 
@@ -1009,6 +1104,10 @@ But I added these names first, instead of how I saved them in my .env files. It 
 
 15. Cloudinary image upload error: The max size can be 10mb, and if it is bigger, it redirects to error 500 page. Solution: I made custom error 500 page, where it says, the data is wrong, image is too big.
 <br>
+
+An error message:(not valid anymore)  
+
+![error](</readme/assets/must supply api key.png>)
 
 **Known bugs:**
 
@@ -1080,7 +1179,7 @@ If something else throws error 500, the message on the custom template might not
 - [google fonts Karla](https://fonts.google.com/?query=karla)
 - [google fonts Permanent marker](https://fonts.google.com/?query=permanent+marker)
 
-Special thanks to Code Institute and my mentor Ronan McClelland for reviewing, helping, and answering all my questions.
+Special thanks to Code Institute and my mentor **Ronan McClelland** for reviewing, helping, and answering all my questions.
 
 
 
