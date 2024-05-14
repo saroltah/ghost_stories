@@ -1,6 +1,22 @@
 # Ghost stories
 
 Live website: https://ghost-stories-072f21228a45.herokuapp.com/
+![Ghost stories front page](</readme/assets/ghost stories front.png>)
+CONTENT:
+- [Goal of the website](#goal-of-the-website)
+- [Wireframe](#wireframe)
+- [User experience](#user-experience)
+- [Design](#design)
+- [Epics and user stories](#epics-and-user-stories)
+- [Existing features](#existing-features)
+- [Future features](#future-features)
+- [Deployment and forking](#deployment-and-forking)
+- [Work progress](#work-progress)
+- [Languages](#languages)
+- [Libraries and frameworks](#libraries-and-frameworks)
+- [Validating](#validating)
+- [Manual testing](#manual-testing)
+- [Credits and sources](#credits-and-sources)
 
 ## Goal of the website
 
@@ -8,11 +24,39 @@ The website creates a community of short story writers specified in horror genre
 
 ### Wireframe
 
-Due to the time limit, I drew my wireframes by hand. I decided to come back to that later using the wireframe program if I had time. I haven’t had time for that, I have prioritized other parts of the development. 
+Due to the time limit, I drew my wireframes by hand. I decided to come back to that later using the wireframe program if I had time, but I have prioritized other parts of the development. 
+
+Sign up and sign in: 
+
+![sign up and sign in](</readme/assets/wireframe images/sign up and sign in page.jpg>) 
+
+Stories and one story:
+
+![wireframe image](</readme/assets/wireframe images/stories and one story page.jpg>) 
+
+About and terms: 
+
+![wireframe image](</readme/assets/wireframe images/about and terms page.jpg>) 
+
+Add story and add comment:
+
+![wireframe image](</readme/assets/wireframe images/add story and add comment page.jpg>) 
+
+Desktop and mobile view profile page:
+
+![wireframe image](</readme/assets/wireframe images/desktop and mobile view profile page.jpg>) 
+
+Liked stories page (this I don't have): 
+
+![wireframe image](</readme/assets/wireframe images/liked stories page.jpg>) 
+
+Logged out and logged in home page
+
+![wireframe image](</readme/assets/wireframe images/logged out and logged in home page.jpg>)
 
 # User experience
 
-####Importnace of the website:
+#### Importnace of the website:
 Amateur writers can show their work to a bigger audience, which improves their creativity, encourages them to practice and improve their writing skills
 Users can receive feedback, which helps them improve, as well as provide encouragement and support.
 The website creates a community between writers( and readers) who share similar interests.
@@ -27,6 +71,11 @@ I designed the page to be easily navigatable, that does not contain any unnecess
 The user gets a notification to confirm he sent/deleted or edited something. 
 - **Colors:** I wanted to keep it simple, so I used only a light grey, a dark red, and white. I chose the grey from the default profile picture. I Stored everything in CSS variables.
 
+Default profile picture: 
+
+![Default profile photo](</readme/assets/34. getting colors from default image.png>)
+
+
 - **Fonts:** I used 4 types of font families.
   - For the logo: **Permanent Marker, cursive**
   - The written font for the heading is beautiful: **Julee, cursive**
@@ -39,9 +88,11 @@ The user gets a notification to confirm he sent/deleted or edited something.
 
 ## Epics and user stories
 
-I used GitHub projects, to write down all the important features I needed in my website, using user stories. I divided my user stories into different categories, so it is easier to see my progress or find a story I need. I also labeled them by the MoSCoW prioritization: must-have, should have, could have, won’t have, and put a question mark for those, I need to do research on how to implement. 
+I used GitHub projects, to write down all the important features I needed in my website, using user stories. I divided my user stories into different categories (I would make them as epics), so it is easier to see my progress or find a story I need. I also labeled them by the MoSCoW prioritization: must-have, should have, could have, won’t have, and put a question mark for those, I need to do research on how to implement. 
 As I started/finished a task, I moved it from the to-do list to the in-progress and then Done list.
 I haven’t accomplished everything I planned, but I closed all issues, and the ones that are not finished, I will move to version 2 of this project. All user stories have acceptance criteria also.
+
+![Github projects](</readme/assets/23. using github project.png>)
 
 **Categories:**
 
@@ -299,7 +350,6 @@ Originally I didn’t put anything here, just as the project involved. In the en
 
 - Password repetition
 - Log in with the “remember me” option
-- Password reminder in email
 - Sign out - with confirmation
 - Only about and terms can be seen without signing in
 - Sign-in - sign-out messages
@@ -311,6 +361,7 @@ Originally I didn’t put anything here, just as the project involved. In the en
 
 - View and edit option (edit only for your own profile)
 - Edit: name, image, About me (with text editor), choose goal: writer/editor, email, and phone number.
+- Default profile picture
 - Change or reset their password
 - Important messages can be read under the username: Email address and phone number can only be seen by the EDITORS! and image size can be a max of 10MB!
 - Hide profile option: If a profile is hidden, no one can see it.
@@ -374,7 +425,7 @@ _Note: The original plan was to have 2 interfaces with different actions. One fo
 - Add delete account option 
 - Add edit/delete comment function.
 
--  Reset password: The registration is happening by username, not email. So connection is not found (even if I added email at registration) The registration form needs to be changed, or the reset password form, to be connected with username (and then email).
+- Reset password: The registration is happening by username, not email. So connection is not found (even if I added email at registration) The registration form needs to be changed, or the reset password form, to be connected with username (and then email).
 
 #### Ideas:
 
@@ -644,10 +695,11 @@ I used the source code for validation. - Django’s automatically generated form
 
 _Note: [Am I responsive](https://ui.dev/amiresponsive) was not working. I tried with different websites, but it didn’t load anything. I used dev tools to test._
 
-## Testing and validation
 Lighthouse checks for desktop devices:
 Desktop:
 Mobile:
+
+## Manual testing
 
 **Homepage:**
 What is the expectation and how to test it? | Is it working? 
@@ -717,6 +769,10 @@ What is the expectation and how to test it? | Is it working?
 | On the edit profile page I I click on | Yes.
 | I write a comment as a writer. Then changed my status(goal) to writer. In the comment, it also changes my status from writer to editor. I I click on | Yes.
 | The story I write as an writer is still there, even touch i change my status to editor. | Yes. _Note: The future function will not let editors/writers to change their status_
+| At the edit profile's image section I click on select file and select image from my computer. Then I click on update profile, it redirects me to the view profile page, and I can see my new image. | Yes.
+| I upload big images from my professional camera, and since max size is 10 MB, it writes a message, that the max size is 10MB | Yes
+| At the image section I click on the clear checkbox and update profile button, and my image changes back to the default picture.  | Yes.
+
 
 <br>
 
@@ -847,6 +903,9 @@ But I added these names first, instead of how I saved them in my .env files. It 
 
 14. Validation error: the element a must not appear as a descendant of the button element. - So deleted the buttons, and styled the links as buttons.
 
+15. Image size error: When the Image was too big, it redirected the user to a server error page. I added a validator to the cloudinary image model, so it throws an error message if the image is too instead of redirecting to an error page.
+
+
 <br>
 
 **Known bugs:**
@@ -867,8 +926,10 @@ NONE
 - get context data: [Don’t repeat yourself](https://dontrepeatyourself.org/post/django-blog-tutorial-part-4-posts-and-comments/)
 - push menu items to the right side: [System22WebDesign YouTube video](https://www.youtube.com/watch?v=Bb5B40QAkcs&ab_channel=System22WebDesign%7CDiviThemeElementorWP)
 
-- self.cleaned_data.get('keywords') [chatgpt](https://chat.openai.com/)
+- self.cleaned_data.get('keywords'): [chatgpt](https://chat.openai.com/)
 
+- Add validator to Cloudinary image field (validate_image_size(value) function): 
+[chatgpt](https://chat.openai.com/)
 
 - tutorial to add autoslug: [Django-autoslug](https://django-autoslug.readthedocs.io/en/latest/)
 
