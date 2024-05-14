@@ -8,14 +8,6 @@ from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
 
 
-def validate_image_size(value):
-    if isinstance(value, bool):
-        return
-    max_size = 10 * 1024 * 1024  # 1MB
-    if value.size > max_size:
-        raise ValidationError(f"Image size should be less than 10 MB.")
-
-
 class Writer(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
@@ -39,9 +31,7 @@ class Writer(models.Model):
     phone = models.CharField(blank=True)
     photo = CloudinaryField('image',
                             default='placeholder',
-                            blank=True,
-                            validators=[validate_image_size]
-                            )
+                            blank=True,)
     about_me = models.TextField(blank=True)
     facebook_link = models.CharField(blank=True, max_length=100)
     instagram_link = models.CharField(blank=True, max_length=100)
