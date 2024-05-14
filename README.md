@@ -92,7 +92,18 @@ I used GitHub projects, to write down all the important features I needed in my 
 As I started/finished a task, I moved it from the to-do list to the in-progress and then Done list.
 I haven’t accomplished everything I planned, but I closed all issues, and the ones that are not finished, I will move to version 2 of this project. All user stories have acceptance criteria also.
 
+Github project: 
+
 ![Github projects](</readme/assets/23. using github project.png>)
+
+Sorting by labels: 
+
+![Sorting by labels](</readme/assets/6 Sorts by labels, so I see all the must haves together.png>)
+
+
+Naming and prioritizing user stories: 
+
+![user stories](</readme/assets/4 I name my stories categorized by the epic.png>)
 
 **Categories:**
 
@@ -355,6 +366,14 @@ Originally I didn’t put anything here, just as the project involved. In the en
 - Sign-in - sign-out messages
 - Authentication links in the menu
 
+sign up:
+
+![sign up](</readme/assets/sign up.png>)
+
+sign in:
+
+![sign in](</readme/assets/sign in.png>)
+
 **Profile**
 
 - Own profile link in the menu
@@ -373,6 +392,14 @@ Originally I didn’t put anything here, just as the project involved. In the en
 
 _NOTE: In the future, I will add the writer/editor option choice to the registration form, not to edit the profile, so the user can not change between._
 
+profile:
+
+![profile](<readme/assets/profile page.png>)
+
+edit profile: 
+
+![edit prof](<readme/assets/edit profile.png>)
+
 **Add stories**
 
 - Only for Writers
@@ -381,6 +408,10 @@ _NOTE: In the future, I will add the writer/editor option choice to the registra
 - Edit option only for writers - can edit all the fields.
 - Delete the story option.
 - Message, when the story is published or edited, or deleted.
+
+add story:
+
+![add story](</readme/assets/add new story.png>)
 
 **View stories**
 
@@ -394,6 +425,13 @@ _NOTE: In the future, I will add the writer/editor option choice to the registra
 
 _NOTE: The like button will be replaced in the future, now the page will be refreshed._
 
+stories:
+
+![stories](/readme/assets/stories.png)
+
+one story:
+
+![one story](</readme/assets/one story.png>) 
 
 **Admin functions**
 
@@ -405,6 +443,17 @@ _NOTE: The like button will be replaced in the future, now the page will be refr
 **Error handling**:
 
 - If a user makes a wrong request, or looks for a non-existing page, it redirects to a custom “page not found” template. 
+
+- If a user tries to upload too big image file, it also redirects to a custom "wrong data" template.
+
+
+![wrong data](</readme/assets/505 page.png>)
+
+![only logged in](<readme/assets/only logged in.png>)
+
+![no access](</readme/assets/no access.png>)
+
+ ![no exist](</readme/assets/not exist.png>)
 
 ### Future features
 
@@ -474,7 +523,7 @@ _Note: The original plan was to have 2 interfaces with different actions. One fo
 - **Heroku deployment:**
 
 1. On the Heroku dashboard create new app with unique name
-2. Settings - reveal the config vars - Add key DISABLE_COLLECTSTATIC with value 1 (later with staticfiles we delete it, but we add Cloudinary details: CLOUD_NAME, API_KEY, SECRET_KEY.
+2. Settings - reveal the config vars - Add key DISABLE_COLLECTSTATIC with value 1 (later with staticfiles we delete it, but we add Cloudinary details: CLOUD_NAME, API_KEY, SECRET_KEY.)
 3. Update our code: install gunicorn, and refresh requirement.txt
 4. Create Procfile in the root directory, and add: web: gunicorn your_project_name.wsgi
 
@@ -517,6 +566,9 @@ For clarity, I used comment-out lines for separate CSS and HTML sections, also n
 
 4. Create the URL connections.
 
+planned urls:
+
+![plannd urls](</readme/assets/planned urls.png>)
 
 _NOTE These URLs I did not make:_
 - https://gs/contact
@@ -528,6 +580,8 @@ _NOTE These URLs I did not make:_
  _For these comment URL-s I need comment ID - or make it on the page, so no extra URL is needed_
 
 5. Create the model relationship tables.
+
+![models](</readme/assets/model relationshoip database.png>)
 
 6. Create the database.
 
@@ -671,29 +725,79 @@ imports:
 
 ### Tools, programs, and technologies
 
-- VSCode
+- [VSCode](https://code.visualstudio.com/)
 - [Shecodes shadow and gradient generators](https://generators.shecodes.io/css-box-shadow-generator)
-- GitHub projects
-- GitHub Desktop
-- ElephantSQL
-- Bootstrap
-- Heroku
+- [GitHub projects](https://docs.github.com/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+- [GitHub Desktop](https://desktop.github.com/)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Heroku](https://www.heroku.com/)
 - [Chrome color picker](https://chrome.google.com/webstore/detail/color-picker-for-chrome/clldacgmdnnanihiibdgemajcfkmfhia)
 
 ### Validating
 
+I tested to all pages, but I only will copy few print screens in, since I have too many. 
+
 - [W3C CSS validator](https://jigsaw.w3.org/css-validator/) - shows no error
+
+![css valid](/readme/assets/profiles.css.png)
+
 - [W3C HTML validator](https://validator.w3.org/) 
-
-
 
 I used the source code for validation. - Django’s automatically generated forms, and summernote show error! My code without this automatically generated code shows no error!
 
-- [JS Hint](https://jshint.com/): Shows no error
+Examples:
+
+Add_story.html form errors: 
+
+![html error](</readme/assets/add_story.html form throws 8 error.png>)
+
+Add_story.html without the form (only my own code):
+
+![html no error](</readme/assets/add_story.html my own code without froms.png>)
+
+
+Summernote throws error at view_profile: 
+
+ ![ error](</readme/assets/view_profile summernote error 2.png>) 
+ 
+ ![ error](</readme/assets/view_profile summernote error.png>)
+
+View_profile without summernote: 
+
+ ![no error](</readme/assets/view_profile.html without summer note own code.png>)
+
+- [JS Hint](https://jshint.com/): Shows no error / one warning
+
+![js](</readme/assets/js in add_story.png>)
+
 - [Site 24x7 Js validator](https://www.site24x7.com/tools/javascript-validator.html): Shows one warning
+
+![js warning](</readme/assets/one-_story js warning.png>)
+
 - [Python Validator](https://pep8ci.herokuapp.com/): Shows no error
 
+![prof model](/readme/assets/profiles.png)
+
+![form](</readme/assets/form.png>)
+
 _Note: [Am I responsive](https://ui.dev/amiresponsive) was not working. I tried with different websites, but it didn’t load anything. I used dev tools to test._
+
+mobile device:
+
+![mobile](/readme/assets/iphone1.png)
+
+![mobile](/readme/assets/iphone2.png)
+
+tablet/ipad:
+
+![tablet](/readme/assets/ipad1.png) 
+
+![tablet](/readme/assets/ipad2.png)
+
+Desktop:
+
+![desktop](/readme/assets/nesthub.png)
 
 Lighthouse checks for desktop devices:
 Desktop:
@@ -770,7 +874,7 @@ What is the expectation and how to test it? | Is it working?
 | I write a comment as a writer. Then changed my status(goal) to writer. In the comment, it also changes my status from writer to editor. I I click on | Yes.
 | The story I write as an writer is still there, even touch i change my status to editor. | Yes. _Note: The future function will not let editors/writers to change their status_
 | At the edit profile's image section I click on select file and select image from my computer. Then I click on update profile, it redirects me to the view profile page, and I can see my new image. | Yes.
-| I upload big images from my professional camera, and since max size is 10 MB, it writes a message, that the max size is 10MB | Yes
+| I upload big images from my professional camera, and since max size is 10 MB, it redirects to a custom error page,which says the image needs to be smaller than 10mb.| Yes
 | At the image section I click on the clear checkbox and update profile button, and my image changes back to the default picture.  | Yes.
 
 
@@ -903,15 +1007,12 @@ But I added these names first, instead of how I saved them in my .env files. It 
 
 14. Validation error: the element a must not appear as a descendant of the button element. - So deleted the buttons, and styled the links as buttons.
 
-15. Image size error: When the Image was too big, it redirected the user to a server error page. I added a validator to the cloudinary image model, so it throws an error message if the image is too instead of redirecting to an error page.
-
-
+15. Cloudinary image upload error: The max size can be 10mb, and if it is bigger, it redirects to error 500 page. Solution: I made custom error 500 page, where it says, the data is wrong, image is too big.
 <br>
 
 **Known bugs:**
 
-NONE
-
+If something else throws error 500, the message on the custom template might not be relatable. (In the future I will need to validate image size before it gets to the database)
 
 ## Credits and sources
 
@@ -927,9 +1028,6 @@ NONE
 - push menu items to the right side: [System22WebDesign YouTube video](https://www.youtube.com/watch?v=Bb5B40QAkcs&ab_channel=System22WebDesign%7CDiviThemeElementorWP)
 
 - self.cleaned_data.get('keywords'): [chatgpt](https://chat.openai.com/)
-
-- Add validator to Cloudinary image field (validate_image_size(value) function): 
-[chatgpt](https://chat.openai.com/)
 
 - tutorial to add autoslug: [Django-autoslug](https://django-autoslug.readthedocs.io/en/latest/)
 
