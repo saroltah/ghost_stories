@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='writer',
             name='phone',
-            field=models.IntegerField(blank=True, default=0),
+            field=models.IntegerField(blank=True, default=0, max_length=12),
             preserve_default=False,
         ),
     ]

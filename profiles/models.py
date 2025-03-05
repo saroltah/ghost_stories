@@ -28,7 +28,8 @@ class Writer(models.Model):
                            choices=VIS_CHOICES,
                            default="Visible")
     email = models.EmailField(max_length=100)
-    phone = models.CharField(blank=True)
+    phone = models.CharField(blank=True,
+                             max_length=12)
     photo = CloudinaryField('image',
                             default='placeholder',
                             blank=True,)
