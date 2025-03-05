@@ -501,6 +501,11 @@ _Note: The original plan was to have 2 interfaces with different actions. One fo
 
 - Notification board for seeing likes or comments
 
+### Maintenance
+
+- The ElephantsSQL database has been terminated so I connected a new database. That deleted all data, so I added new data.
+
+
 ## Deployment and forking
 
 -**Create Github project**
@@ -741,7 +746,7 @@ imports:
 - [Shecodes shadow and gradient generators](https://generators.shecodes.io/css-box-shadow-generator)
 - [GitHub projects](https://docs.github.com/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 - [GitHub Desktop](https://desktop.github.com/)
-- [ElephantSQL](https://www.elephantsql.com/)
+- [NeonSQL](https://console.neon.tech/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Heroku](https://www.heroku.com/)
 - [Chrome color picker](https://chrome.google.com/webstore/detail/color-picker-for-chrome/clldacgmdnnanihiibdgemajcfkmfhia)
