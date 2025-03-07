@@ -44,7 +44,7 @@
     <a href="{% url 'add_comment' slug=story.slug %}" aria-label="Add a comment">Add comment</a> <br>
     {% for comment in story.comments.all %}
     <hr />
-    <div class="comment-author">{{comment.author}} - {{user.writer.goal}}</div>
+    <div class="comment-author">{{comment.author}} - {{comment.author.goal}}</div>
     <small>{{comment.created_on}}</small>
     <div class="comment-content">{{comment.content}}</div>
     <hr />
